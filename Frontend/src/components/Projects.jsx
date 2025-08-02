@@ -51,9 +51,10 @@ function Projects() {
         </div> */}
         <div className="deployed-item">
           <h3>Coming Soon</h3>
+          <h3>IRYNK-App</h3>
           <p>This project is currently in development and will be deployed soon.</p>
           <div className="project-links">
-            <a href="#" className="project-link code-link">Source Code</a>
+            <a href="https://github.com/marlonmunoz/IRYNK-App" className="project-link code-link">Source Code</a>
           </div>
           <div className="project-status">
             <span className="status-badge development">In Development</span>
