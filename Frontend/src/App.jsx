@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import './App.css'
 import Portfolio from './components/Portfolio'
 import Projects from './components/Projects'
@@ -6,7 +6,14 @@ import Contact from './components/Contact'
 import Resume from './components/Resume'
 
 function App() {
-  const [activeTab, setActiveTab] = useState('portfolio')
+  const location = useLocation()
+  
+  // Helper function to determine if a route is active
+  const isActiveRoute = (path) => {
+    if (path === '/' && location.pathname === '/') return true
+    if (path !== '/' && location.pathname.startsWith(path)) return true
+    return false
+  }
 
   return (
     <div className="app">
@@ -17,39 +24,41 @@ function App() {
             <h3 className="subtitle">Software Engineer</h3>
           </div>
           <nav className="nav">
-            <button 
-              className={`nav-btn ${activeTab === 'portfolio' ? 'active' : ''}`}
-              onClick={() => setActiveTab('portfolio')}
+            <Link 
+              to="/"
+              className={`nav-btn ${isActiveRoute('/') ? 'active' : ''}`}
             >
               Portfolio
-            </button>
-            <button 
-              className={`nav-btn ${activeTab === 'resume' ? 'active' : ''}`}
-              onClick={() => setActiveTab('resume')}
+            </Link>
+            <Link 
+              to="/resume"
+              className={`nav-btn ${isActiveRoute('/resume') ? 'active' : ''}`}
             >
               Resume
-            </button>
-            <button 
-              className={`nav-btn ${activeTab === 'projects' ? 'active' : ''}`}
-              onClick={() => setActiveTab('projects')}
+            </Link>
+            <Link 
+              to="/projects"
+              className={`nav-btn ${isActiveRoute('/projects') ? 'active' : ''}`}
             >
               Projects
-            </button>
-            <button 
-              className={`nav-btn ${activeTab === 'contacts' ? 'active' : ''}`}
-              onClick={() => setActiveTab('contacts')}
+            </Link>
+            <Link 
+              to="/contact"
+              className={`nav-btn ${isActiveRoute('/contact') ? 'active' : ''}`}
             >
               Contact
-            </button>
+            </Link>
           </nav>
         </div>
       </header>
       
       <main className="main">
-        {activeTab === 'portfolio' && <Portfolio />}
-        {activeTab === 'resume' && <Resume />}
-        {activeTab === 'projects' && <Projects />}
-        {activeTab === 'contacts' && <Contact />}
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
       
       <footer className="footer">

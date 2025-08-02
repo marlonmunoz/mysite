@@ -14,15 +14,15 @@ function Contact() {
               <span className="contact-icon">📧</span>
               <div>
                 <h4>Email</h4>
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="mailto:marlon@marlonshade.com">marlon@marlonshade.com</a>
               </div>
             </div>
             <div className="contact-item">
               <span className="contact-icon">💼</span>
               <div>
                 <h4>LinkedIn</h4>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
-                  linkedin.com/in/yourprofile
+                <a href="https://www.linkedin.com/in/marlonrmunoz/" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/marlonrmunoz
                 </a>
               </div>
             </div>
@@ -30,8 +30,8 @@ function Contact() {
               <span className="contact-icon">🐙</span>
               <div>
                 <h4>GitHub</h4>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                  github.com/yourusername
+                <a href="https://github.com/marlonmunoz" target="_blank" rel="noopener noreferrer">
+                  github.com/marlonmunoz
                 </a>
               </div>
             </div>
