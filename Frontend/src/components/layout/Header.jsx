@@ -38,7 +38,7 @@ const Header = () => {
               Marlon Munoz
             </h1>
             <h3 className="text-accent text-xs sm:text-sm font-normal opacity-90 mt-1">
-              Software Engineer
+              Full-Stack Developer / Software Engineer 
             </h3>
           </div>
           

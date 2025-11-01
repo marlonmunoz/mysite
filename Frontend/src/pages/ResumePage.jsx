@@ -19,7 +19,7 @@ const ResumePage = () => {
   const skillCategories = [
     {
       title: 'Languages & Frameworks',
-      skills: ['Python', 'JavaScript (ES6+)', 'Flask', 'React', 'SQL', 'HTML/CSS3', 'Bootstrap']
+      skills: ['Python', 'JavaScript (ES6+)', 'Flask', 'React', 'SQL', 'HTML', 'CSS3', 'Bootstrap', 'Tailwind']
     },
     {
       title: 'Databases & ORMs',
@@ -158,7 +158,7 @@ const ResumePage = () => {
             </a>
           </div>
           <h2 className="text-sm sm:text-base lg:text-xl font-semibold text-accent uppercase tracking-wide">
-            Software Engineer | Full Stack Developer
+            Full-Stack Developer / SOFTWARE ENGINEER
           </h2>
         </div>
       </Card>
