@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { User, FileText, Rocket, Mail } from 'lucide-react'
 
 const Header = () => {
   const location = useLocation()
@@ -12,10 +13,10 @@ const Header = () => {
   }
 
   const navItems = [
-    { path: '/', label: 'About', icon: '👨‍💻' },
-    { path: '/resume', label: 'Resume', icon: '📄' },
-    { path: '/projects', label: 'Projects', icon: '🚀' },
-    { path: '/contact', label: 'Contact', icon: '📧' },
+    { path: '/', label: 'About', Icon: User },
+    { path: '/resume', label: 'Resume', Icon: FileText },
+    { path: '/projects', label: 'Projects', Icon: Rocket },
+    { path: '/contact', label: 'Contact', Icon: Mail },
   ]
 
   return (
@@ -31,7 +32,7 @@ const Header = () => {
         
         {/* Navigation */}
         <nav className="flex gap-4">
-          {navItems.map(({ path, label, icon }) => (
+          {navItems.map(({ path, label, Icon }) => (
             <Link
               key={path}
               to={path}
@@ -44,7 +45,7 @@ const Header = () => {
                 }
               `}
             >
-              <span className="text-xs">{icon}</span>
+              <Icon size={16} />
               {label}
               {isActiveRoute(path) && (
                 <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-accent rounded-full" />

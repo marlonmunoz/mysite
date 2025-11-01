@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import { Input, Textarea } from '../components/ui/Input'
+import { Mail, Linkedin, Github, Zap, Globe, MessageCircle } from 'lucide-react'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -25,21 +26,21 @@ const ContactPage = () => {
 
   const contactMethods = [
     {
-      icon: '📧',
+      Icon: Mail,
       title: 'Email',
       value: 'marlon@marlonshade.com',
       link: 'mailto:marlon@marlonshade.com',
       description: 'Send me an email anytime'
     },
     {
-      icon: '💼',
+      Icon: Linkedin,
       title: 'LinkedIn',
       value: 'linkedin.com/in/marlonrmunoz',
       link: 'https://www.linkedin.com/in/marlonrmunoz/',
       description: 'Let\'s connect professionally'
     },
     {
-      icon: '🐙',
+      Icon: Github,
       title: 'GitHub',
       value: 'github.com/marlonmunoz',
       link: 'https://github.com/marlonmunoz',
@@ -80,9 +81,9 @@ const ContactPage = () => {
                       rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="flex items-start gap-4 p-4 rounded-lg hover:bg-dark-400/30 transition-colors duration-200"
                     >
-                      <span className="text-2xl group-hover:scale-110 transition-transform duration-200">
-                        {method.icon}
-                      </span>
+                      <div className="text-accent group-hover:scale-110 transition-transform duration-200">
+                        <method.Icon size={24} />
+                      </div>
                       <div className="space-y-1">
                         <h4 className="font-semibold text-white group-hover:text-accent transition-colors">
                           {method.title}
@@ -106,21 +107,27 @@ const ContactPage = () => {
             <Card.Content>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">⚡</span>
+                  <div className="text-accent">
+                    <Zap size={24} />
+                  </div>
                   <div>
                     <h4 className="font-semibold text-white">Quick Response</h4>
                     <p className="text-gray-400 text-sm">I typically respond within 24 hours</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">🌍</span>
+                  <div className="text-accent">
+                    <Globe size={24} />
+                  </div>
                   <div>
                     <h4 className="font-semibold text-white">Location</h4>
                     <p className="text-gray-400 text-sm">Based in NYC, open to remote work</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">💬</span>
+                  <div className="text-accent">
+                    <MessageCircle size={24} />
+                  </div>
                   <div>
                     <h4 className="font-semibold text-white">Let's Chat</h4>
                     <p className="text-gray-400 text-sm">Always excited to discuss new ideas</p>

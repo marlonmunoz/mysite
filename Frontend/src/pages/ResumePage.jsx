@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
+import { FileDown } from 'lucide-react'
 
 const ResumePage = () => {
   const contactInfo = {
@@ -309,7 +310,7 @@ const ResumePage = () => {
         <Card className="bg-gradient-to-br from-accent/10 to-primary-600/10 border-accent/20">
           <Card.Content className="text-center">
             <Button variant="primary" size="lg" className="w-full">
-              <span className="mr-2">📄</span>
+              <FileDown size={16} className="mr-2" />
               Download PDF Resume
             </Button>
             <p className="text-gray-400 text-sm mt-3">

@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
+import { ExternalLink, Folder, Github, Rocket } from 'lucide-react'
 
 const ProjectsPage = () => {
   const projects = [
@@ -92,7 +93,9 @@ const ProjectsPage = () => {
                 className="w-full h-full bg-dark-400 flex items-center justify-center" 
                 style={{display: 'none'}}
               >
-                <span className="text-6xl opacity-50">🚀</span>
+                <div className="text-accent opacity-50">
+                  <Rocket size={64} />
+                </div>
               </div>
               
               {/* Status Badge */}
@@ -147,7 +150,7 @@ const ProjectsPage = () => {
                     className="flex-1"
                   >
                     <Button variant="primary" className="w-full">
-                      <span className="mr-2">🌐</span>
+                      <ExternalLink size={16} className="mr-2" />
                       View Live
                     </Button>
                   </a>
@@ -159,7 +162,7 @@ const ProjectsPage = () => {
                   className={project.liveUrl ? "flex-1" : "w-full"}
                 >
                   <Button variant="outline" className="w-full">
-                    <span className="mr-2">📁</span>
+                    <Github size={16} className="mr-2" />
                     Source Code
                   </Button>
                 </a>
@@ -185,7 +188,7 @@ const ProjectsPage = () => {
                 rel="noopener noreferrer"
               >
                 <Button variant="primary">
-                  <span className="mr-2">🐙</span>
+                  <Github size={16} className="mr-2" />
                   Follow on GitHub
                 </Button>
               </a>

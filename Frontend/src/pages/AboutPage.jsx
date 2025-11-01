@@ -2,6 +2,18 @@ import React from 'react'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import { Link } from 'react-router-dom'
+import { 
+  Film, 
+  Lightbulb, 
+  Rocket, 
+  Palette, 
+  Settings, 
+  Link as LinkIcon, 
+  Smartphone,
+  Sprout,
+  Users,
+  Briefcase
+} from 'lucide-react'
 
 const AboutPage = () => {
   const stats = [
@@ -12,17 +24,17 @@ const AboutPage = () => {
 
   const journeyItems = [
     {
-      icon: '🎬',
+      Icon: Film,
       title: 'Creative Beginnings',
       description: 'Started in the creative industry as a Motion Graphic Designer and Video Editor at Tommy Boy Entertainment, creating compelling visual content that reached 200K+ viewers across social and music platforms.'
     },
     {
-      icon: '💡',
+      Icon: Lightbulb,
       title: 'The Transition',
       description: 'Discovered my passion for coding and problem-solving, leading me to pursue full-stack web development. I love how programming combines logical thinking with creative solutions.'
     },
     {
-      icon: '🚀',
+      Icon: Rocket,
       title: 'Full Stack Developer',
       description: 'Completed intensive training at Flatiron School, mastering Python, JavaScript, React, and Flask. Now building scalable web applications with clean, maintainable code and user-focused design.'
     }
@@ -30,22 +42,22 @@ const AboutPage = () => {
 
   const skills = [
     {
-      icon: '🎨',
+      Icon: Palette,
       title: 'Frontend Development',
       description: 'Creating responsive, interactive user interfaces with React, JavaScript, and modern CSS'
     },
     {
-      icon: '⚙️',
+      Icon: Settings,
       title: 'Backend Development',
       description: 'Building robust APIs and server-side applications using Python, Flask, and SQL databases'
     },
     {
-      icon: '🔗',
+      Icon: LinkIcon,
       title: 'Full Stack Integration',
       description: 'Connecting frontend and backend seamlessly with RESTful APIs and modern development practices'
     },
     {
-      icon: '📱',
+      Icon: Smartphone,
       title: 'Responsive Design',
       description: 'Ensuring applications work beautifully across all devices and screen sizes'
     }
@@ -53,17 +65,17 @@ const AboutPage = () => {
 
   const focusAreas = [
     {
-      emoji: '🌱',
+      Icon: Sprout,
       title: 'Learning & Growing',
       description: 'Expanding my skills in advanced React patterns, Node.js, and cloud deployment'
     },
     {
-      emoji: '🤝',
+      Icon: Users,
       title: 'Collaboration',
       description: 'Seeking opportunities to work with innovative teams focused on growth and product excellence'
     },
     {
-      emoji: '💼',
+      Icon: Briefcase,
       title: 'Career Goals',
       description: 'Looking for full-time software engineering roles where I can contribute and continue learning'
     }
@@ -117,7 +129,9 @@ const AboutPage = () => {
                 className="w-full h-full bg-dark-300 rounded-xl flex flex-col items-center justify-center text-center p-6" 
                 style={{display: 'none'}}
               >
-                <span className="text-6xl mb-4">👨‍💻</span>
+                <div className="text-6xl mb-4 text-accent">
+                  <Settings size={64} />
+                </div>
                 <p className="text-gray-400 text-sm">Add profile.jpg to public folder</p>
               </div>
             </div>
@@ -132,8 +146,8 @@ const AboutPage = () => {
           {journeyItems.map((item, index) => (
             <Card key={index} className="group hover:border-accent/30">
               <div className="flex gap-6 items-start">
-                <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
+                <div className="text-accent group-hover:scale-110 transition-transform duration-300">
+                  <item.Icon size={32} />
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-xl font-semibold text-white">{item.title}</h4>
@@ -152,8 +166,8 @@ const AboutPage = () => {
           {skills.map((skill, index) => (
             <Card key={index} className="group hover:border-accent/30">
               <div className="space-y-4">
-                <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                  {skill.icon}
+                <div className="text-accent group-hover:scale-110 transition-transform duration-300">
+                  <skill.Icon size={32} />
                 </div>
                 <h4 className="text-xl font-semibold text-white">{skill.title}</h4>
                 <p className="text-gray-400">{skill.description}</p>
@@ -170,9 +184,9 @@ const AboutPage = () => {
           {focusAreas.map((item, index) => (
             <Card key={index} className="group hover:border-accent/30">
               <div className="flex gap-6 items-start">
-                <span className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                  {item.emoji}
-                </span>
+                <div className="text-accent group-hover:scale-110 transition-transform duration-300">
+                  <item.Icon size={28} />
+                </div>
                 <div className="space-y-2">
                   <h4 className="text-xl font-semibold text-white">{item.title}</h4>
                   <p className="text-gray-400">{item.description}</p>
