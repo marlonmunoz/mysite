@@ -164,6 +164,325 @@
   font-weight: 500;
 }
 
+/* About Me Section */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+  margin-bottom: 4rem;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  color: #646cff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  color: #646cff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  position: relative;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top; /* Try: center top, center bottom, left center, right center */
+  border: 4px solid rgba(100, 108, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(100, 108, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  border-color: rgba(100, 108, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(100, 108, 255, 0.3);
+}
+
+.profile-placeholder {
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(100, 108, 255, 0.3);
+}
+
+.profile-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.image-note {
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Journey Section */
+.journey-section {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.journey-section h3 {
+  color: #646cff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.journey-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.journey-item {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.journey-icon {
+  font-size: 2.5rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.journey-text h4 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.journey-text p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Skills Overview */
+.skills-overview {
+  margin-bottom: 3rem;
+}
+
+.skills-overview h3 {
+  color: #646cff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.skill-card h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.skill-card p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Current Focus */
+.current-focus {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.current-focus h3 {
+  color: #646cff;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.focus-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.focus-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.focus-emoji {
+  font-size: 2rem;
+  min-width: 50px;
+}
+
+.focus-item h4 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.focus-item p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Call to Action */
+.cta-section {
+  text-align: center;
+  background: rgba(100, 108, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 108, 255, 0.3);
+}
+
+.cta-content h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cta-btn.primary {
+  background: #646cff;
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  background: #535bf2;
+  transform: translateY(-2px);
+}
+
+.cta-btn.secondary {
+  background: #22c55e;
+  color: white;
+}
+
+.cta-btn.secondary:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.cta-btn.outline {
+  background: transparent;
+  color: #646cff;
+  border-color: #646cff;
+}
+
+.cta-btn.outline:hover {
+  background: #646cff;
+  color: white;
+}
+
 /* Deployed Projects Section */
 .deployed-grid {
   display: grid;
@@ -723,6 +1042,57 @@
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
+  }
+
+  /* About Me mobile styles */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .profile-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .journey-item,
+  .focus-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn {
+    width: 200px;
   }
 
   /* Resume mobile styles */

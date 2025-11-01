@@ -28,7 +28,7 @@ function App() {
               to="/"
               className={`nav-btn ${isActiveRoute('/') ? 'active' : ''}`}
             >
-              Portfolio
+              About
             </Link>
             <Link 
               to="/resume"
