@@ -130,34 +130,34 @@ const ResumePage = () => {
   ]
 
   return (
-    <div className="space-y-8 max-w-4xl mx-auto">
+    <div className="space-y-6 sm:space-y-8 max-w-4xl mx-auto">
       {/* Header */}
       <Card className="bg-gradient-to-r from-accent/10 to-primary-600/10 border-accent/20">
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold text-white">{contactInfo.name}</h1>
-          <p className="text-gray-300">
+        <div className="text-center space-y-3 sm:space-y-4">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{contactInfo.name}</h1>
+          <p className="text-sm sm:text-base text-gray-300">
             {contactInfo.location} · {contactInfo.phone}
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             {contactInfo.links.map((link, index) => (
               <a
                 key={index}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-accent hover:text-accent/80 transition-colors"
+                className="text-accent hover:text-accent/80 transition-colors px-2 py-1"
               >
                 {link.label}
               </a>
             ))}
             <a
               href={`mailto:${contactInfo.email}`}
-              className="text-accent hover:text-accent/80 transition-colors"
+              className="text-accent hover:text-accent/80 transition-colors px-2 py-1 break-all"
             >
               {contactInfo.email}
             </a>
           </div>
-          <h2 className="text-xl font-semibold text-accent uppercase tracking-wide">
+          <h2 className="text-sm sm:text-base lg:text-xl font-semibold text-accent uppercase tracking-wide">
             Software Engineer | Full Stack Developer
           </h2>
         </div>
@@ -182,14 +182,14 @@ const ResumePage = () => {
       {/* Technical Skills */}
       <Card>
         <Card.Header>
-          <Card.Title>Technical Skills</Card.Title>
+          <Card.Title className="text-lg sm:text-xl">Technical Skills</Card.Title>
         </Card.Header>
         <Card.Content>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories.map((category, index) => (
-              <div key={index} className="space-y-3">
-                <h4 className="font-semibold text-white text-sm">{category.title}</h4>
-                <div className="flex flex-wrap gap-2">
+              <div key={index} className="space-y-2 sm:space-y-3">
+                <h4 className="font-semibold text-white text-xs sm:text-sm">{category.title}</h4>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
@@ -297,23 +297,24 @@ const ResumePage = () => {
       </Card>
 
       {/* References & Download */}
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
         <Card>
           <Card.Header>
-            <Card.Title>References</Card.Title>
+            <Card.Title className="text-lg sm:text-xl">References</Card.Title>
           </Card.Header>
           <Card.Content>
-            <p className="text-gray-400">Available upon request</p>
+            <p className="text-sm sm:text-base text-gray-400">Available upon request</p>
           </Card.Content>
         </Card>
 
         <Card className="bg-gradient-to-br from-accent/10 to-primary-600/10 border-accent/20">
           <Card.Content className="text-center">
-            <Button variant="primary" size="lg" className="w-full">
+            <Button variant="primary" size="lg" className="w-full text-sm sm:text-base">
               <FileDown size={16} className="mr-2" />
-              Download PDF Resume
+              <span className="hidden sm:inline">Download PDF Resume</span>
+              <span className="sm:hidden">Download Resume</span>
             </Button>
-            <p className="text-gray-400 text-sm mt-3">
+            <p className="text-gray-400 text-xs sm:text-sm mt-3">
               Get a PDF copy for your records
             </p>
           </Card.Content>

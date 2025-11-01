@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 max-w-6xl mx-auto py-8 px-6 w-full">
+      <main className="flex-1 max-w-6xl mx-auto py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-8 w-full">
         <div className="animate-fade-in">
           {children}
         </div>

@@ -82,18 +82,18 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-12 sm:space-y-16">
       {/* Hero Section */}
-      <section className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6">
+      <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="space-y-6 lg:order-1">
           <div className="space-y-4">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Hi, I'm <span className="text-accent">Marlon Munoz</span>
             </h1>
-            <h2 className="text-2xl lg:text-3xl text-gray-300 font-light">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light">
               Full Stack Software Engineer
             </h2>
-            <p className="text-lg text-gray-400 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
               I'm a passionate software engineer who transforms ideas into elegant, 
               user-focused digital solutions. With a unique background spanning creative 
               media and technology, I bring both artistic vision and technical precision 
@@ -102,20 +102,20 @@ const AboutPage = () => {
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 py-6">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-2xl font-bold text-accent">{stat.number}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
+                <div className="text-xl sm:text-2xl font-bold text-accent">{stat.number}</div>
+                <div className="text-xs sm:text-sm text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
         
         {/* Profile Image */}
-        <div className="flex justify-center lg:justify-end">
+        <div className="flex justify-center lg:justify-end lg:order-2">
           <div className="relative">
-            <div className="w-80 h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary-600/20 p-1">
+            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary-600/20 p-1">
               <img 
                 src="/papamago.jpeg" 
                 alt="Marlon Munoz - Software Engineer"
@@ -140,18 +140,18 @@ const AboutPage = () => {
       </section>
 
       {/* My Journey Section */}
-      <section className="space-y-8">
-        <h3 className="text-3xl font-bold text-white text-center">My Journey</h3>
-        <div className="space-y-6">
+      <section className="space-y-6 sm:space-y-8">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">My Journey</h3>
+        <div className="space-y-4 sm:space-y-6">
           {journeyItems.map((item, index) => (
             <Card key={index} className="group hover:border-accent/30">
-              <div className="flex gap-6 items-start">
-                <div className="text-accent group-hover:scale-110 transition-transform duration-300">
-                  <item.Icon size={32} />
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+                <div className="text-accent group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  <item.Icon size={28} className="sm:w-8 sm:h-8" />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-xl font-semibold text-white">{item.title}</h4>
-                  <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white">{item.title}</h4>
+                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </Card>
@@ -160,17 +160,17 @@ const AboutPage = () => {
       </section>
 
       {/* What I Do Section */}
-      <section className="space-y-8">
-        <h3 className="text-3xl font-bold text-white text-center">What I Do</h3>
-        <div className="grid md:grid-cols-2 gap-6">
+      <section className="space-y-6 sm:space-y-8">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">What I Do</h3>
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {skills.map((skill, index) => (
             <Card key={index} className="group hover:border-accent/30">
               <div className="space-y-4">
                 <div className="text-accent group-hover:scale-110 transition-transform duration-300">
-                  <skill.Icon size={32} />
+                  <skill.Icon size={28} className="sm:w-8 sm:h-8" />
                 </div>
-                <h4 className="text-xl font-semibold text-white">{skill.title}</h4>
-                <p className="text-gray-400">{skill.description}</p>
+                <h4 className="text-lg sm:text-xl font-semibold text-white">{skill.title}</h4>
+                <p className="text-sm sm:text-base text-gray-400">{skill.description}</p>
               </div>
             </Card>
           ))}
@@ -178,18 +178,18 @@ const AboutPage = () => {
       </section>
 
       {/* Current Focus */}
-      <section className="space-y-8">
-        <h3 className="text-3xl font-bold text-white text-center">Currently Focused On</h3>
-        <div className="space-y-6">
+      <section className="space-y-6 sm:space-y-8">
+        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">Currently Focused On</h3>
+        <div className="space-y-4 sm:space-y-6">
           {focusAreas.map((item, index) => (
             <Card key={index} className="group hover:border-accent/30">
-              <div className="flex gap-6 items-start">
-                <div className="text-accent group-hover:scale-110 transition-transform duration-300">
-                  <item.Icon size={28} />
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+                <div className="text-accent group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                  <item.Icon size={24} className="sm:w-7 sm:h-7" />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-xl font-semibold text-white">{item.title}</h4>
-                  <p className="text-gray-400">{item.description}</p>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white">{item.title}</h4>
+                  <p className="text-sm sm:text-base text-gray-400">{item.description}</p>
                 </div>
               </div>
             </Card>
@@ -198,23 +198,31 @@ const AboutPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="text-center space-y-8">
+      <section className="text-center space-y-6 sm:space-y-8">
         <Card className="border-accent/20 bg-gradient-to-r from-accent/5 to-primary-600/5">
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-white">Let's Build Something Amazing Together</h3>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+              Let's Build Something Amazing Together
+            </h3>
+            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
               I'm passionate about creating solutions that make a difference. 
               Check out my work, download my resume, or get in touch!
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/projects">
-                <Button variant="primary" size="lg">View My Projects</Button>
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+              <Link to="/projects" className="w-full sm:w-auto">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                  View My Projects
+                </Button>
               </Link>
-              <Link to="/resume">
-                <Button variant="secondary" size="lg">See My Resume</Button>
+              <Link to="/resume" className="w-full sm:w-auto">
+                <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                  See My Resume
+                </Button>
               </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg">Get In Touch</Button>
+              <Link to="/contact" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  Get In Touch
+                </Button>
               </Link>
             </div>
           </div>
