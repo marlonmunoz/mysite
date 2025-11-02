@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import { Input, Textarea } from '../components/ui/Input'
@@ -10,6 +11,9 @@ const ContactPage = () => {
     email: '',
     message: ''
   })
+  
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', or null
 
   const handleChange = (e) => {
     setFormData(prev => ({
@@ -18,10 +22,51 @@ const ContactPage = () => {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // TODO: Implement form submission
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      // EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      // Check if environment variables are set
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.')
+      }
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          title: `New message from ${formData.name}`,
+          name: formData.name,
+          email: formData.email, // Changed from from_email to email
+          message: formData.message,
+          time: new Date().toLocaleString(),
+        },
+        publicKey
+      )
+
+      console.log('Email sent successfully:', result)
+      setSubmitStatus('success')
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      })
+    } catch (error) {
+      console.error('Failed to send email:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactMethods = [
@@ -146,12 +191,27 @@ const ContactPage = () => {
             </Card.Header>
             <Card.Content>
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-400">
+                    <p className="text-sm">✅ Message sent successfully! I'll get back to you soon.</p>
+                  </div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400">
+                    <p className="text-sm">❌ Failed to send message. Please try again or contact me directly.</p>
+                  </div>
+                )}
+
                 <Input
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
                 
                 <Input
@@ -161,6 +221,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
                 
                 <Textarea
@@ -171,6 +232,7 @@ const ContactPage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
+                  disabled={isSubmitting}
                 />
                 
                 <Button 
@@ -178,8 +240,9 @@ const ContactPage = () => {
                   variant="primary" 
                   size="lg" 
                   className="w-full"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </Card.Content>
