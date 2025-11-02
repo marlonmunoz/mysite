@@ -7,8 +7,8 @@ const ProjectsPage = () => {
   const projects = [
     {
       title: 'X-PENSE',
-      description: 'A comprehensive expense tracking application built with modern web technologies. Features real-time expense tracking, categorization, and detailed analytics.',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'Local Storage'],
+      description: 'A comprehensive full-stack expense tracking application built with modern web technologies. Features real-time expense tracking, categorization, and detailed analytics.',
+      technologies: ['JavaScript(ES6+)', 'Python', 'React', 'Flask', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap',],
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/x-pense-app',
       sourceUrl: 'https://github.com/marlonmunoz/x-pense-app',
@@ -38,11 +38,20 @@ const ProjectsPage = () => {
     {
       title: 'IRYNK-App',
       description: 'A full-stack social platform for creative professionals. Currently in development with React frontend and Flask backend.',
-      technologies: ['React', 'Flask', 'Python', 'SQLAlchemy', 'PostgreSQL'],
+      technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap'],
       status: 'development',
       sourceUrl: 'https://github.com/marlonmunoz/IRYNK-App',
       image: '/projects/irynk.png',
       highlights: ['User authentication', 'Real-time features', 'API development']
+    },
+    {
+      title: 'HomeTrade Technologies',
+      description: 'HomeTrade is a comprehensive real estate platform that enables direct buyer-seller connections through a modern, responsive web application.',
+      technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap'],
+      status: 'development',
+      sourceUrl: 'https://github.com/marlonmunoz/home-trade-MVP-app',
+      image: '/projects/irynk.png',
+      highlights: ['Role-Based Authentication System ', 'Advanced Property Search & Filtering', 'Complete Property Management', 'Mobile-First Responsive Design', 'Modern UI/UX with Animations']
     }
   ]
 
