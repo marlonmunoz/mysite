@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
       colors: {
@@ -26,6 +27,13 @@ export default {
           300: '#2a2a2a',
           400: '#333333',
           500: '#3d3d3d',
+        },
+        light: {
+          100: '#ffffff',
+          200: '#f8fafc',
+          300: '#f1f5f9',
+          400: '#e2e8f0',
+          500: '#cbd5e1',
         }
       },
       fontFamily: {

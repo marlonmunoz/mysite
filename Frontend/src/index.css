@@ -19,7 +19,7 @@
   }
   
   body {
-    @apply bg-dark-200 text-white/90 font-sans leading-relaxed min-h-screen;
+    @apply bg-light-100 dark:bg-dark-200 text-gray-900 dark:text-white/90 font-sans leading-relaxed min-h-screen transition-colors duration-300;
   }
   
   a {
