@@ -35,14 +35,14 @@ const ResumePage = () => {
     },
     {
       title: 'Other Tools',
-      skills: ['Adobe After Effects', 'Premier Pro']
+      skills: ['Adobe After Effects', 'Premier Pro','Adobe Photoshop','Adobe Illustrator']
     }
   ]
 
   const projects = [
     {
       title: 'X-PENSE',
-      subtitle: 'Budget Tracking App with Real-Time Cryptocurrency Updates',
+      subtitle: 'AI Powered Budget Tracking App with Real-Time Cryptocurrency Updates',
       links: [
         { label: 'Github', url: 'https://github.com/marlonmunoz/x-pense-app' },
         { label: 'Live', url: 'https://marlonmunoz.github.io/x-pense-app/' }

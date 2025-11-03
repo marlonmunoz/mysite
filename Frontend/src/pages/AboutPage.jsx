@@ -91,7 +91,7 @@ const AboutPage = () => {
               Hi, I'm <span className="text-accent">Marlon Munoz</span>
             </h1>
             <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light">
-              Software Engineer/Full-Stack Developer 
+              Full-Stack Developer / Software Engineer 
             </h2>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
               I'm a passionate software engineer who transforms ideas into elegant, 
