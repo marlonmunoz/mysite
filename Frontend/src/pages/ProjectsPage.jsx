@@ -51,10 +51,10 @@ const ProjectsPage = () => {
       status: 'development',
       sourceUrl: 'https://github.com/marlonmunoz/home-trade-MVP-app',
       image: '/projects/irynk.png',
-      highlights: ['Role-Based Authentication System ', 'Advanced Property Search & Filtering', 'Complete Property Management', 'Mobile-First Responsive Design', 'Modern UI/UX with Animations']
+      highlights: ['Role-Based Authentication System ', 'Advanced Property Search & Filtering', 'Complete Property Management','Interactive User Onboarding', 'Sophisticated Theme System',  'Mobile-First Responsive Design', 'Modern UI/UX with Animations']
     },
     {
-      title: 'MarlonShade.com',
+      title: 'My Personal Website',
       description: '',
       technologies: ['JavaScript(ES6)','React', 'HTML', 'CSS3', 'Tailwind'],
       status: 'development',
