@@ -12,8 +12,8 @@ const ProjectsPage = () => {
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/x-pense-app',
       sourceUrl: 'https://github.com/marlonmunoz/x-pense-app',
-      image: '/projects/xpense.png',
-      highlights: ['Real-time tracking', 'Data visualization', 'Responsive design']
+      image: '/projects/x-pense-site.png',
+      highlights: ['AI Integration', 'User Authentication System', 'Real-time tracking', 'Data visualization', 'Responsive design']
     },
     {
       title: 'FOX-RUNNER GAME',
@@ -22,7 +22,7 @@ const ProjectsPage = () => {
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/Retro_Fox_Runner-_p5/',
       sourceUrl: 'https://github.com/marlonmunoz/Retro_Fox_Runner-_p5',
-      image: '/projects/foxrunner.png',
+      image: '/projects/fox-runner-game.png',
       highlights: ['Game physics', 'Animation system', 'Score tracking']
     },
     {
@@ -32,7 +32,7 @@ const ProjectsPage = () => {
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/calculator_project/',
       sourceUrl: 'https://github.com/marlonmunoz/calculator_project',
-      image: '/projects/calculator.png',
+      image: '/projects/50-cal.png',
       highlights: ['Clean UI', 'Keyboard support', 'Error handling']
     },
     {
@@ -47,12 +47,22 @@ const ProjectsPage = () => {
     {
       title: 'HomeTrade Technologies',
       description: 'HomeTrade is a comprehensive real estate platform that enables direct buyer-seller connections through a modern, responsive web application.',
-      technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap'],
+      technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Tailwind'],
       status: 'development',
       sourceUrl: 'https://github.com/marlonmunoz/home-trade-MVP-app',
       image: '/projects/irynk.png',
       highlights: ['Role-Based Authentication System ', 'Advanced Property Search & Filtering', 'Complete Property Management', 'Mobile-First Responsive Design', 'Modern UI/UX with Animations']
+    },
+    {
+      title: 'MarlonShade.com',
+      description: '',
+      technologies: ['JavaScript(ES6)','React', 'HTML', 'CSS3', 'Tailwind'],
+      status: 'development',
+      sourceUrl: 'https://github.com/marlonmunoz/mysite',
+      image: '/projects/irynk.png',
+      highlights: ['Dynamic Theme Toggle', 'Functional Contact Form', 'Responsive Design Systems', 'Professional Portfolio Layout', 'Real-Time Form Validation', 'Mobile-First Responsive Design', 'Modern UI/UX with Animations', 'Optimized Performance', ]
     }
+
   ]
 
   const getStatusBadge = (status) => {
