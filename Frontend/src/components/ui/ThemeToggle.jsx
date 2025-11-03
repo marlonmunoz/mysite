@@ -11,7 +11,10 @@ const ThemeToggle = ({ className = '' }) => {
       className={`
         relative inline-flex items-center justify-center
         p-2 rounded-lg transition-all duration-200
-        hover:bg-gray-200 dark:hover:bg-dark-400/50
+        bg-transparent
+        border border-gray-300 dark:border-gray-600
+        hover:bg-gray-200/80 dark:hover:bg-dark-400/50
+        hover:border-gray-400 dark:hover:border-gray-500
         focus:outline-none focus:ring-2 focus:ring-accent/50
         ${className}
       `}

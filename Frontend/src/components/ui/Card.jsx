@@ -3,7 +3,16 @@ import React from 'react'
 const Card = ({ children, className = '', ...props }) => {
   return (
     <div 
-      className={`bg-dark-300/50 backdrop-blur-sm border border-dark-400/50 rounded-xl p-6 transition-all duration-300 hover:bg-dark-300/70 ${className}`}
+      className={`
+        bg-white/90 dark:bg-dark-300/50 
+        backdrop-blur-sm 
+        border border-gray-200 dark:border-dark-400/50 
+        rounded-xl p-6 
+        transition-all duration-300 
+        hover:bg-white dark:hover:bg-dark-300/70
+        shadow-sm dark:shadow-none
+        ${className}
+      `}
       {...props}
     >
       {children}
@@ -21,7 +30,7 @@ const CardHeader = ({ children, className = '' }) => {
 
 const CardTitle = ({ children, className = '' }) => {
   return (
-    <h3 className={`text-xl font-semibold text-white ${className}`}>
+    <h3 className={`text-xl font-semibold text-gray-900 dark:text-white ${className}`}>
       {children}
     </h3>
   )
@@ -29,7 +38,7 @@ const CardTitle = ({ children, className = '' }) => {
 
 const CardContent = ({ children, className = '' }) => {
   return (
-    <div className={`text-gray-300 ${className}`}>
+    <div className={`text-gray-700 dark:text-gray-300 ${className}`}>
       {children}
     </div>
   )

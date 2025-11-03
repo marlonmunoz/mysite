@@ -76,8 +76,8 @@ const ProjectsPage = () => {
     <div className="space-y-8 sm:space-y-12">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h1 className="text-3xl sm:text-4xl font-bold text-white">My Projects</h1>
-        <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto px-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">My Projects</h1>
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto px-4">
           A collection of applications I've built, showcasing my skills in frontend development, 
           game development, and full-stack applications.
         </p>
@@ -116,10 +116,10 @@ const ProjectsPage = () => {
             {/* Project Content */}
             <div className="space-y-3 sm:space-y-4">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-accent transition-colors">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white group-hover:text-accent transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-400 mt-2 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 mt-2 leading-relaxed">
                   {project.description}
                 </p>
               </div>
@@ -129,7 +129,7 @@ const ProjectsPage = () => {
                 {project.technologies.map((tech, techIndex) => (
                   <span 
                     key={techIndex}
-                    className="px-2 py-1 bg-dark-400/50 text-accent text-xs rounded-md border border-dark-400"
+                    className="px-2 py-1 bg-gray-100 dark:bg-dark-400/50 text-accent text-xs rounded-md border border-gray-300 dark:border-dark-400"
                   >
                     {tech}
                   </span>
@@ -138,8 +138,8 @@ const ProjectsPage = () => {
 
               {/* Highlights */}
               <div className="space-y-2">
-                <h4 className="text-xs sm:text-sm font-medium text-gray-300">Key Features:</h4>
-                <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
+                <h4 className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">Key Features:</h4>
+                <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1">
                   {project.highlights.map((highlight, highlightIndex) => (
                     <li key={highlightIndex} className="flex items-center gap-2">
                       <span className="w-1 h-1 bg-accent rounded-full flex-shrink-0"></span>
@@ -185,10 +185,10 @@ const ProjectsPage = () => {
 
       {/* Call to Action */}
       <div className="text-center">
-        <Card className="bg-gradient-to-r from-accent/5 to-primary-600/5 border-accent/20">
+        <Card className="bg-gradient-to-r from-accent/5 to-primary-600/5 dark:from-accent/5 dark:to-primary-600/5 border-accent/20">
           <div className="space-y-4">
-            <h3 className="text-xl sm:text-2xl font-bold text-white">More Projects Coming Soon</h3>
-            <p className="text-sm sm:text-base text-gray-400 px-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">More Projects Coming Soon</h3>
+            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 px-4">
               I'm constantly working on new projects and learning new technologies. 
               Check back soon for updates, or follow my GitHub for the latest developments.
             </p>

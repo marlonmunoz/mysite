@@ -132,10 +132,10 @@ const ResumePage = () => {
   return (
     <div className="space-y-6 sm:space-y-8 max-w-4xl mx-auto">
       {/* Header */}
-      <Card className="bg-gradient-to-r from-accent/10 to-primary-600/10 border-accent/20">
+      <Card>
         <div className="text-center space-y-3 sm:space-y-4">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{contactInfo.name}</h1>
-          <p className="text-sm sm:text-base text-gray-300">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">{contactInfo.name}</h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
             {contactInfo.location} · {contactInfo.phone}
           </p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
@@ -169,7 +169,7 @@ const ResumePage = () => {
           <Card.Title>Professional Summary</Card.Title>
         </Card.Header>
         <Card.Content>
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
             Motivated and detail-oriented Software Engineer with hands-on experience in full-stack web development, 
             building RESTful APIs, and deploying responsive web applications. Skilled in Python, Javascript, Flask, 
             and React. Strong foundation in object-oriented programming, Agile methodologies and modern version control 
@@ -188,12 +188,12 @@ const ResumePage = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {skillCategories.map((category, index) => (
               <div key={index} className="space-y-2 sm:space-y-3">
-                <h4 className="font-semibold text-white text-xs sm:text-sm">{category.title}</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white text-xs sm:text-sm">{category.title}</h4>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-2 py-1 bg-dark-400/50 text-accent text-xs rounded border border-dark-400 hover:border-accent/50 transition-colors"
+                      className="px-2 py-1 bg-gray-100 dark:bg-dark-400/50 text-accent text-xs rounded border border-gray-300 dark:border-dark-400 hover:border-accent/50 transition-colors"
                     >
                       {skill}
                     </span>
@@ -215,7 +215,7 @@ const ResumePage = () => {
             {projects.map((project, index) => (
               <div key={index} className="border-l-2 border-accent/30 pl-6 space-y-3">
                 <div className="flex flex-wrap justify-between items-start gap-2">
-                  <h4 className="text-xl font-semibold text-white">{project.title}</h4>
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h4>
                   <div className="flex gap-3">
                     {project.links.map((link, linkIndex) => (
                       <a
@@ -233,7 +233,7 @@ const ResumePage = () => {
                 <p className="text-accent/80 text-sm italic">{project.subtitle}</p>
                 <ul className="space-y-2">
                   {project.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="text-gray-300 text-sm flex items-start gap-3">
+                    <li key={detailIndex} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-3">
                       <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
                       {detail}
                     </li>
@@ -255,16 +255,16 @@ const ResumePage = () => {
             {experience.map((exp, index) => (
               <div key={index} className="border-l-2 border-accent/30 pl-6 space-y-3">
                 <div className="space-y-1">
-                  <h4 className="text-xl font-semibold text-white">{exp.title}</h4>
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.title}</h4>
                   <div className="flex flex-wrap justify-between items-center gap-2">
                     <span className="text-accent font-medium">{exp.company}, {exp.location}</span>
-                    <span className="text-gray-400 text-sm">{exp.date}</span>
+                    <span className="text-gray-600 dark:text-gray-400 text-sm">{exp.date}</span>
                   </div>
                   <p className="text-accent/70 text-sm">{exp.website}</p>
                 </div>
                 <ul className="space-y-2">
                   {exp.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="text-gray-300 text-sm flex items-start gap-3">
+                    <li key={detailIndex} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-3">
                       <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
                       {detail}
                     </li>
@@ -285,10 +285,10 @@ const ResumePage = () => {
           <div className="space-y-6">
             {education.map((edu, index) => (
               <div key={index} className="border-l-2 border-accent/30 pl-6 space-y-2">
-                <h4 className="text-lg font-semibold text-white">{edu.degree}</h4>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{edu.degree}</h4>
                 <div className="flex flex-wrap justify-between items-center gap-2">
                   <span className="text-accent">{edu.school}, {edu.location}</span>
-                  <span className="text-gray-400 text-sm">{edu.date}</span>
+                  <span className="text-gray-600 dark:text-gray-400 text-sm font-medium">{edu.date}</span>
                 </div>
               </div>
             ))}
@@ -303,18 +303,18 @@ const ResumePage = () => {
             <Card.Title className="text-lg sm:text-xl">References</Card.Title>
           </Card.Header>
           <Card.Content>
-            <p className="text-sm sm:text-base text-gray-400">Available upon request</p>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">Available upon request</p>
           </Card.Content>
         </Card>
 
-        <Card className="bg-gradient-to-br from-accent/10 to-primary-600/10 border-accent/20">
+        <Card className="bg-gradient-to-br from-accent/10 to-primary-600/10 dark:from-accent/10 dark:to-primary-600/10 border-accent/20">
           <Card.Content className="text-center">
             <Button variant="primary" size="lg" className="w-full text-sm sm:text-base">
               <FileDown size={16} className="mr-2" />
               <span className="hidden sm:inline">Download PDF Resume</span>
               <span className="sm:hidden">Download Resume</span>
             </Button>
-            <p className="text-gray-400 text-xs sm:text-sm mt-3">
+            <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-3">
               Get a PDF copy for your records
             </p>
           </Card.Content>

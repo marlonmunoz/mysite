@@ -87,13 +87,13 @@ const AboutPage = () => {
       <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div className="space-y-6 lg:order-1">
           <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
               Hi, I'm <span className="text-accent">Marlon Munoz</span>
             </h1>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-light">
               Full-Stack Developer / Software Engineer 
             </h2>
-            <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               I'm a passionate software engineer who transforms ideas into elegant, 
               user-focused digital solutions. With a unique background spanning creative 
               media and technology, I bring both artistic vision and technical precision 
@@ -106,7 +106,7 @@ const AboutPage = () => {
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-xl sm:text-2xl font-bold text-accent">{stat.number}</div>
-                <div className="text-xs sm:text-sm text-gray-400">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -141,7 +141,7 @@ const AboutPage = () => {
 
       {/* My Journey Section */}
       <section className="space-y-6 sm:space-y-8">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">My Journey</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white text-center">My Journey</h3>
         <div className="space-y-4 sm:space-y-6">
           {journeyItems.map((item, index) => (
             <Card key={index} className="group hover:border-accent/30">
@@ -150,8 +150,8 @@ const AboutPage = () => {
                   <item.Icon size={28} className="sm:w-8 sm:h-8" />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">{item.title}</h4>
-                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{item.description}</p>
+                  <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h4>
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 leading-relaxed">{item.description}</p>
                 </div>
               </div>
             </Card>
@@ -161,7 +161,7 @@ const AboutPage = () => {
 
       {/* What I Do Section */}
       <section className="space-y-6 sm:space-y-8">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">What I Do</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white text-center">What I Do</h3>
         <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {skills.map((skill, index) => (
             <Card key={index} className="group hover:border-accent/30">
@@ -169,8 +169,8 @@ const AboutPage = () => {
                 <div className="text-accent group-hover:scale-110 transition-transform duration-300">
                   <skill.Icon size={28} className="sm:w-8 sm:h-8" />
                 </div>
-                <h4 className="text-lg sm:text-xl font-semibold text-white">{skill.title}</h4>
-                <p className="text-sm sm:text-base text-gray-400">{skill.description}</p>
+                <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">{skill.title}</h4>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400">{skill.description}</p>
               </div>
             </Card>
           ))}
@@ -179,7 +179,7 @@ const AboutPage = () => {
 
       {/* Current Focus */}
       <section className="space-y-6 sm:space-y-8">
-        <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">Currently Focused On</h3>
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white text-center">Currently Focused On</h3>
         <div className="space-y-4 sm:space-y-6">
           {focusAreas.map((item, index) => (
             <Card key={index} className="group hover:border-accent/30">
@@ -188,8 +188,8 @@ const AboutPage = () => {
                   <item.Icon size={24} className="sm:w-7 sm:h-7" />
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-lg sm:text-xl font-semibold text-white">{item.title}</h4>
-                  <p className="text-sm sm:text-base text-gray-400">{item.description}</p>
+                  <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">{item.title}</h4>
+                  <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400">{item.description}</p>
                 </div>
               </div>
             </Card>
@@ -199,12 +199,12 @@ const AboutPage = () => {
 
       {/* Call to Action */}
       <section className="text-center space-y-6 sm:space-y-8">
-        <Card className="border-accent/20 bg-gradient-to-r from-accent/5 to-primary-600/5">
+        <Card className="border-accent/20 bg-gradient-to-r from-accent/5 to-primary-600/5 dark:from-accent/5 dark:to-primary-600/5">
           <div className="space-y-4 sm:space-y-6">
-            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
               Let's Build Something Amazing Together
             </h3>
-            <p className="text-sm sm:text-base lg:text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-700 dark:text-gray-400 max-w-2xl mx-auto">
               I'm passionate about creating solutions that make a difference. 
               Check out my work, download my resume, or get in touch!
             </p>

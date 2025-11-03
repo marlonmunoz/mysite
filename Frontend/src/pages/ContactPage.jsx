@@ -97,8 +97,8 @@ const ContactPage = () => {
     <div className="space-y-8 sm:space-y-12">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h1 className="text-3xl sm:text-4xl font-bold text-white">Contact Me</h1>
-        <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto px-4">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Contact Me</h1>
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
           I'd love to hear from you! Whether you have a project idea, job opportunity, 
           or just want to connect, feel free to reach out.
         </p>
@@ -112,7 +112,7 @@ const ContactPage = () => {
               <Card.Title className="text-lg sm:text-xl">Get In Touch</Card.Title>
             </Card.Header>
             <Card.Content>
-              <p className="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6">
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-400 mb-4 sm:mb-6">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a conversation about technology and development.
               </p>
@@ -124,19 +124,19 @@ const ContactPage = () => {
                       href={method.link}
                       target={method.link.startsWith('http') ? '_blank' : undefined}
                       rel={method.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg hover:bg-dark-400/30 transition-colors duration-200"
+                      className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-400/30 transition-colors duration-200"
                     >
                       <div className="text-accent group-hover:scale-110 transition-transform duration-200 flex-shrink-0">
                         <method.Icon size={20} className="sm:w-6 sm:h-6" />
                       </div>
                       <div className="space-y-1 min-w-0">
-                        <h4 className="font-semibold text-white group-hover:text-accent transition-colors text-sm sm:text-base">
+                        <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors text-sm sm:text-base">
                           {method.title}
                         </h4>
                         <p className="text-accent text-xs sm:text-sm font-medium break-all">
                           {method.value}
                         </p>
-                        <p className="text-gray-400 text-xs sm:text-sm">
+                        <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm">
                           {method.description}
                         </p>
                       </div>
@@ -148,7 +148,7 @@ const ContactPage = () => {
           </Card>
 
           {/* Additional Info */}
-          <Card className="bg-gradient-to-br from-accent/5 to-primary-600/5 border-accent/20">
+          <Card className="bg-gradient-to-br from-accent/5 to-primary-600/5 dark:from-accent/5 dark:to-primary-600/5 border-accent/20">
             <Card.Content>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -156,8 +156,8 @@ const ContactPage = () => {
                     <Zap size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white">Quick Response</h4>
-                    <p className="text-gray-400 text-sm">I typically respond within 24 hours</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Quick Response</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">I typically respond within 24 hours</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -165,8 +165,8 @@ const ContactPage = () => {
                     <Globe size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white">Location</h4>
-                    <p className="text-gray-400 text-sm">Based in NYC, open to remote work</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Location</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Based in NYC, open to remote work</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -174,8 +174,8 @@ const ContactPage = () => {
                     <MessageCircle size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white">Let's Chat</h4>
-                    <p className="text-gray-400 text-sm">Always excited to discuss new ideas</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white">Let's Chat</h4>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">Always excited to discuss new ideas</p>
                   </div>
                 </div>
               </div>
