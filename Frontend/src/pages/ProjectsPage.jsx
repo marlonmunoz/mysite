@@ -13,7 +13,8 @@ const ProjectsPage = () => {
       liveUrl: 'https://marlonmunoz.github.io/x-pense-app',
       sourceUrl: 'https://github.com/marlonmunoz/x-pense-app',
       image: '/projects/x-pense-site.png',
-      highlights: ['AI Powered Transaction Categorization', 'Interactive Financial Dashbaord', 'Smart Balance Management', 'Goal Tracking & Progress Visualization',  'Live Cryptocurrency Investment Tracking',  'Advanced UI/UX Darl/Light Mode',  'Comprehensive Transaction Managemnet',  'AI Demo and Natural Language Queries',]
+      highlights: ['AI Powered Transaction Categorization', 'Interactive Financial Dashbaord', 'Smart Balance Management', 'Goal Tracking & Progress Visualization',  'Live Cryptocurrency Investment Tracking',  'Advanced UI/UX Darl/Light Mode',  'Comprehensive Transaction Managemnet',  'AI Demo and Natural Language Queries',],
+      bonusFeatures: ['Professional deployment on Railway (backend) and GitHub Pages (frontend)', 'Input validation and error handling throughout', 'Mobile-responsive design with dedicated mobile navigation', 'RESTful API integration with Flask backend and React frontend']
     },
     {
       title: 'FOX-RUNNER GAME',
@@ -157,6 +158,19 @@ const ProjectsPage = () => {
                     </li>
                   ))}
                 </ul>
+                {project.bonusFeatures && (
+                  <>
+                    <h4 className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">Bonus Features:</h4>
+                    <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                      {project.bonusFeatures.map((bonusFeature, bonusIndex) => (
+                        <li key={bonusIndex} className="flex items-center gap-2">
+                          <span className="w-1 h-1 bg-accent rounded-full flex-shrink-0"></span>
+                          {bonusFeature}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
               </div>
 
               {/* Action Buttons */}
