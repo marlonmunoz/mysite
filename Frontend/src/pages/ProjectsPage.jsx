@@ -17,14 +17,15 @@ const ProjectsPage = () => {
       bonusFeatures: ['Professional deployment on Railway (backend) and GitHub Pages (frontend)', 'Input validation and error handling throughout', 'Mobile-responsive design with dedicated mobile navigation', 'RESTful API integration with Flask backend and React frontend']
     },
     {
-      title: 'FOX-RUNNER GAME',
-      description: 'An engaging retro-style endless runner game built with p5.js. Features smooth animations, collision detection, and progressive difficulty.',
+      title: 'RETRO FOX-RUNNER',
+      description: 'Retro Fox Runner is a 2D platformer featuring a fox protagonist navigating through a retro-styled world with multi-layer parallax scrolling. Players use jumping, running, and rolling attack mechanics to defeat three types of intelligent enemies while collecting animated gems across an expansive game world. The game features a heart-based health system, responsive controls, and smooth physics-based movement with precise collision detection. Built with vanilla JavaScript and HTML5 Canvas, it demonstrates professional game development through optimized rendering and modular object-oriented architecture.',
       technologies: ['p5.js', 'JavaScript', 'HTML', 'CSS'],
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/Retro_Fox_Runner-_p5/',
       sourceUrl: 'https://github.com/marlonmunoz/Retro_Fox_Runner-_p5',
       image: '/projects/fox-runner-game.png',
-      highlights: ['Game physics', 'Animation system', 'Score tracking']
+      highlights: ['Advanced Player Movement System', 'Diverse Enemy System', 'Multi-Layer Parallax System', 'Advanced Camera & Scrolling System', 'Comprehensive Collectibles & Progression', 'Health & Life Management System', 'Rich Audio & Interactive Controls', 'Professional Game Architecture',],
+      bonusFeatures: ['Retro Pixels Art Aesthetic', 'Sophisticated Collision System', 'Performance Optimizations', 'Extensible Architecture: Ready for additional levels']
     },
     {
       title: 'CALCULATOR',
@@ -38,7 +39,7 @@ const ProjectsPage = () => {
     },
     {
       title: 'IRYNK-App',
-      description: 'A full-stack social platform for creative professionals. Currently in development with React frontend and Flask backend.',
+      description: 'is a comprehensive full-stack web application designed to guide parents in selecting developmentally appropriate toys for children aged 0-24 months. The platform features an intelligent categorization system that maps toys to specific developmental milestones, including sensory, cognitive, emotional, and motor skill development across 10 specialized categories. Built with a modern React frontend and Flask backend, the application offers advanced search functionality, real-time filtering by age and category, and complete CRUD operations for toy management. The app empowers parents with expert-curated recommendations while providing an intuitive interface for discovering, managing, and contributing to a growing database of child development-focused toys.',
       technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap'],
       status: 'development',
       sourceUrl: 'https://github.com/marlonmunoz/IRYNK-App',
