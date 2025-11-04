@@ -12,12 +12,23 @@ import {
   Smartphone,
   Sprout,
   Users,
-  Briefcase
+  Briefcase,
+  Code,
+  Terminal,
+  Cpu,
+  Database,
+  GitBranch,
+  Zap
 } from 'lucide-react'
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [counts, setCounts] = useState({ projects: 0, years: 0 })
+  const [currentWordIndex, setCurrentWordIndex] = useState(0)
+  const [displayedText, setDisplayedText] = useState('')
+  const [isTyping, setIsTyping] = useState(true)
+
+  const dynamicWords = ['passionate', 'innovative', 'detail-oriented', 'creative', 'problem-solving']
 
   useEffect(() => {
     setIsVisible(true)
@@ -43,7 +54,40 @@ const AboutPage = () => {
       animateCount(6, 'projects')
       animateCount(5, 'years') // 2025 - 2020 = 5 years
     }, 500)
-  }, [])
+
+    // Typing effect for dynamic words
+    const typeWord = () => {
+      const currentWord = dynamicWords[currentWordIndex]
+      let charIndex = 0
+      
+      const typeTimer = setInterval(() => {
+        if (charIndex <= currentWord.length) {
+          setDisplayedText(currentWord.slice(0, charIndex))
+          charIndex++
+        } else {
+          clearInterval(typeTimer)
+          setTimeout(() => {
+            // Start erasing
+            const eraseTimer = setInterval(() => {
+              if (charIndex > 0) {
+                setDisplayedText(currentWord.slice(0, charIndex - 1))
+                charIndex--
+              } else {
+                clearInterval(eraseTimer)
+                setCurrentWordIndex((prev) => (prev + 1) % dynamicWords.length)
+              }
+            }, 100)
+          }, 2000) // Wait 2 seconds before erasing
+        }
+      }, 150)
+    }
+
+    const wordTimer = setTimeout(typeWord, 1500)
+    
+    return () => {
+      clearTimeout(wordTimer)
+    }
+  }, [currentWordIndex])
 
   const stats = [
     { number: `${counts.projects}+`, label: 'Projects Built' },
@@ -111,15 +155,106 @@ const AboutPage = () => {
   ]
 
   return (
-    <div className="space-y-12 sm:space-y-16">
+    <div className="space-y-12 sm:space-y-16 relative overflow-hidden">
+      {/* Floating tech elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Code brackets - left side */}
+        <div className="absolute top-20 left-10 text-accent/20 animate-bounce text-4xl font-mono">{'{'}</div>
+        <div className="absolute top-24 left-14 text-accent/20 animate-bounce delay-500 text-4xl font-mono">{'}'}</div>
+        <div className="absolute top-96 left-8 text-primary-600/15 animate-bounce delay-1000 text-3xl font-mono">{'['}</div>
+        <div className="absolute top-100 left-12 text-primary-600/15 animate-bounce delay-1500 text-3xl font-mono">{']'}</div>
+        
+        {/* Code brackets - right side */}
+        <div className="absolute top-32 right-16 text-accent/15 animate-bounce delay-700 text-4xl font-mono">{'<'}</div>
+        <div className="absolute top-36 right-20 text-accent/15 animate-bounce delay-1200 text-4xl font-mono">{'>'}</div>
+        <div className="absolute bottom-96 right-12 text-primary-600/20 animate-bounce delay-2000 text-3xl font-mono">{'('}</div>
+        <div className="absolute bottom-100 right-16 text-primary-600/20 animate-bounce delay-2500 text-3xl font-mono">{')'}</div>
+        
+        {/* Tech icons floating - top area */}
+        <div className="absolute top-40 right-20 text-primary-600/30 animate-pulse">
+          <Code size={24} className="animate-spin-slow" />
+        </div>
+        <div className="absolute top-16 left-1/3 text-accent/25 animate-pulse delay-800">
+          <Terminal size={22} />
+        </div>
+        <div className="absolute top-28 right-1/4 text-primary-600/20 animate-bounce delay-400">
+          <Cpu size={18} />
+        </div>
+        
+        {/* Tech icons floating - middle area */}
+        <div className="absolute top-1/2 right-1/3 text-primary-600/20 animate-ping">
+          <Cpu size={16} />
+        </div>
+        <div className="absolute top-1/2 left-1/4 text-accent/30 animate-pulse delay-1100">
+          <GitBranch size={26} />
+        </div>
+        <div className="absolute top-2/3 right-1/5 text-primary-600/25 animate-bounce delay-1600">
+          <Database size={20} />
+        </div>
+        
+        {/* Tech icons floating - bottom area */}
+        <div className="absolute bottom-40 left-20 text-accent/25 animate-bounce delay-1000">
+          <Terminal size={20} />
+        </div>
+        <div className="absolute bottom-60 right-40 text-accent/30 animate-pulse delay-700">
+          <Database size={18} />
+        </div>
+        <div className="absolute bottom-32 left-1/3 text-accent/20 animate-pulse delay-1500">
+          <Zap size={20} />
+        </div>
+        <div className="absolute bottom-20 right-1/4 text-primary-600/25 animate-bounce delay-300">
+          <GitBranch size={24} />
+        </div>
+        <div className="absolute bottom-80 left-1/5 text-accent/20 animate-ping delay-2200">
+          <Code size={22} />
+        </div>
+        
+        {/* Additional scattered icons */}
+        <div className="absolute top-32 right-1/2 text-primary-600/25 animate-bounce delay-300">
+          <GitBranch size={22} />
+        </div>
+        <div className="absolute top-3/4 left-10 text-accent/15 animate-pulse delay-1800">
+          <Zap size={18} />
+        </div>
+        <div className="absolute top-1/4 left-2/3 text-primary-600/20 animate-spin-slow">
+          <Settings size={16} />
+        </div>
+        
+        {/* Code snippets - scattered around */}
+        <div className="absolute top-60 left-5 text-accent/15 font-mono text-sm animate-pulse delay-2000">
+          const
+        </div>
+        <div className="absolute bottom-20 right-10 text-primary-600/15 font-mono text-sm animate-pulse delay-1200">
+          =&gt;
+        </div>
+        <div className="absolute top-80 right-5 text-accent/15 font-mono text-sm animate-bounce delay-800">
+          ()
+        </div>
+        <div className="absolute top-1/3 left-8 text-primary-600/12 font-mono text-xs animate-pulse delay-1600">
+          function
+        </div>
+        <div className="absolute bottom-1/3 right-8 text-accent/12 font-mono text-xs animate-bounce delay-2400">
+          return
+        </div>
+        <div className="absolute top-2/3 right-1/6 text-primary-600/15 font-mono text-sm animate-pulse delay-900">
+          ;
+        </div>
+        <div className="absolute bottom-60 left-1/6 text-accent/15 font-mono text-sm animate-bounce delay-1300">
+          &&
+        </div>
+        <div className="absolute top-48 left-2/3 text-primary-600/12 font-mono text-xs animate-pulse delay-1900">
+          import
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         <div className="space-y-6 lg:order-1">
           <div className="space-y-4">
             <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight transform transition-all duration-1000 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}>
-              Hi, I'm <span className="text-accent bg-gradient-to-r from-accent to-primary-600 bg-clip-text">Marlon Munoz</span>
+              Hi, I'm <span className="text-accent bg-gradient-to-r from-accent to-primary-600 bg-clip-text animate-pulse">Marlon Munoz</span>
             </h1>
             <h2 className={`text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-light transform transition-all duration-1000 delay-300 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
@@ -129,7 +264,10 @@ const AboutPage = () => {
             <p className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed transform transition-all duration-1000 delay-500 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}>
-              I'm a <span className="text-accent font-medium">passionate</span> software engineer who transforms ideas into elegant, 
+              I'm a <span className="text-accent font-medium transition-all duration-500">
+                {displayedText}
+                <span className="animate-pulse">|</span>
+              </span> software engineer who transforms ideas into elegant, 
               user-focused digital solutions. With a unique background spanning creative 
               media and technology, I bring both artistic vision and technical precision 
               to every project I build.
@@ -141,14 +279,15 @@ const AboutPage = () => {
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className={`text-center transform transition-all duration-1000 delay-${index * 200} ${
+                className={`text-center transform transition-all duration-1000 delay-${index * 200} group cursor-pointer ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
               >
-                <div className="text-xl sm:text-2xl font-bold text-accent hover:scale-110 transition-transform duration-300">
+                <div className="text-xl sm:text-2xl font-bold text-accent group-hover:scale-125 group-hover:text-primary-600 transition-all duration-300 relative">
                   {stat.number}
+                  <div className="absolute inset-0 bg-accent/20 rounded-full scale-0 group-hover:scale-110 transition-all duration-300 -z-10"></div>
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 group-hover:text-accent transition-colors duration-300">{stat.label}</div>
               </div>
             ))}
           </div>
