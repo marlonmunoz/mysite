@@ -17,7 +17,7 @@ import {
 
 const AboutPage = () => {
   const stats = [
-    { number: '4+', label: 'Projects Built' },
+    { number: '6+', label: 'Projects Built' },
     { number: 'Pending', label: 'Content Views' },
     { number: '2020', label: 'Started Coding' }
   ]
@@ -113,8 +113,8 @@ const AboutPage = () => {
         </div>
         
         {/* Profile Image */}
-        <div className="flex justify-center lg:justify-end lg:order-2">
-          <div className="relative">
+        {/* <div className="flex justify-center lg:justify-end lg:order-2"> */}
+          {/* <div className="relative"> */}
             {/* <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary-600/20 p-1">
               <img 
                 src="/papamago.jpeg" 
@@ -135,8 +135,8 @@ const AboutPage = () => {
                 <p className="text-gray-400 text-sm">Add profile.jpg to public folder</p>
               </div>
             </div> */}
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </section>
 
       {/* My Journey Section */}
