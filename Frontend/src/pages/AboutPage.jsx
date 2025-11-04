@@ -115,7 +115,7 @@ const AboutPage = () => {
         {/* Profile Image */}
         <div className="flex justify-center lg:justify-end lg:order-2">
           <div className="relative">
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary-600/20 p-1">
+            {/* <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-primary-600/20 p-1">
               <img 
                 src="/papamago.jpeg" 
                 alt="Marlon Munoz - Software Engineer"
@@ -134,7 +134,7 @@ const AboutPage = () => {
                 </div>
                 <p className="text-gray-400 text-sm">Add profile.jpg to public folder</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

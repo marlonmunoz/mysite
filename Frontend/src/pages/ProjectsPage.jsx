@@ -57,10 +57,10 @@ const ProjectsPage = () => {
       highlights: ['Role-Based Authentication System ', 'Advanced Property Search & Filtering', 'Complete Property Management','Interactive User Onboarding', 'Sophisticated Theme System',  'Mobile-First Responsive Design', 'Modern UI/UX with Animations']
     },
     {
-      title: 'My Personal Website',
+      title: 'themarloncode.com',
       description: '',
       technologies: ['JavaScript(ES6)','React', 'HTML', 'CSS3', 'Tailwind'],
-      status: 'development',
+      status: 'live',
       sourceUrl: 'https://github.com/marlonmunoz/mysite',
       image: '/projects/irynk.png',
       highlights: ['Dynamic Theme Toggle', 'Functional Contact Form', 'Responsive Design Systems', 'Professional Portfolio Layout', 'Real-Time Form Validation', 'Mobile-First Responsive Design', 'Modern UI/UX with Animations', 'Optimized Performance', ]
