@@ -18,7 +18,7 @@ const ProjectsPage = () => {
     },
     {
       title: 'RETRO FOX-RUNNER',
-      description: 'Retro Fox Runner is a 2D platformer featuring a fox protagonist navigating through a retro-styled world with multi-layer parallax scrolling. Players use jumping, running, and rolling attack mechanics to defeat three types of intelligent enemies while collecting animated gems across an expansive game world. The game features a heart-based health system, responsive controls, and smooth physics-based movement with precise collision detection. Built with vanilla JavaScript and HTML5 Canvas, it demonstrates professional game development through optimized rendering and modular object-oriented architecture.',
+      description: 'Retro Fox Runner is a 2D platformer featuring a fox navigating a retro-styled world. Players jump, run, and roll to defeat enemies while collecting gems. The game includes a heart-based health system and smooth physics-based movement. Built with vanilla JavaScript, it demonstrates clean game development architecture.',
       technologies: ['p5.js', 'JavaScript', 'HTML', 'CSS'],
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/Retro_Fox_Runner-_p5/',
@@ -39,7 +39,7 @@ const ProjectsPage = () => {
     },
     {
       title: 'IRYNK-App',
-      description: 'is a comprehensive full-stack web application designed to guide parents in selecting developmentally appropriate toys for children aged 0-24 months. The platform features an intelligent categorization system that maps toys to specific developmental milestones, including sensory, cognitive, emotional, and motor skill development across 10 specialized categories. Built with a modern React frontend and Flask backend, the application offers advanced search functionality, real-time filtering by age and category, and complete CRUD operations for toy management. The app empowers parents with expert-curated recommendations while providing an intuitive interface for discovering, managing, and contributing to a growing database of child development-focused toys.',
+      description: "is a full-stack web application that helps parents select developmentally appropriate toys for children aged 0-24 months. The platform features intelligent categorization across 10 developmental areas including sensory, cognitive, and motor skills with advanced search and filtering capabilities. Built with React and Flask, the app offers complete toy management functionality and expert-curated recommendations. This tool empowers parents to make informed decisions about toys that support their child's specific developmental milestones.",
       technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap'],
       status: 'development',
       sourceUrl: 'https://github.com/marlonmunoz/IRYNK-App',
@@ -48,7 +48,7 @@ const ProjectsPage = () => {
       bonusFeatures: ['Duplicate Prevention', 'Error Handling', 'Technology stack', 'Development Tools']
     },
     {
-      title: 'HomeTrade Technologies',
+      title: 'Real Estate Platform',
       description: 'HomeTrade is a comprehensive real estate platform that enables direct buyer-seller connections through a modern, responsive web application.',
       technologies: ['JavaScript(ES6)','React', 'Python', 'SQLAlchemy', 'PostgreSQL', 'HTML', 'CSS3', 'Tailwind'],
       status: 'development',
