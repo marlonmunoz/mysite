@@ -43,7 +43,8 @@ const ProjectsPage = () => {
       status: 'development',
       sourceUrl: 'https://github.com/marlonmunoz/IRYNK-App',
       image: '/projects/irynk.png',
-      highlights: ['User authentication', 'Real-time features', 'API development']
+      highlights: ['Advanced Search & Filtering System', 'Age-Specific Toy Recommendations', 'Interactive Like / Favorite System', 'Add New Toys Feature', 'Contact & Comunication Systems', 'Responsive Design & Navigation', 'Full-Stack Architecture & API'],
+      bonusFeatures: ['Duplicate Prevention', 'Error Handling', 'Technology stack', 'Development Tools']
     },
     {
       title: 'HomeTrade Technologies',
