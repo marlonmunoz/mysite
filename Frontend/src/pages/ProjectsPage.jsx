@@ -7,13 +7,13 @@ const ProjectsPage = () => {
   const projects = [
     {
       title: 'X-PENSE',
-      description: 'A comprehensive full-stack expense tracking application built with modern web technologies. Features real-time expense tracking, categorization, and detailed analytics.',
+      description: 'X-PENSE is a sophisticated full-stack financial management solution that combines modern web technologies with AI capabilities to provide intelligent expense tracking and financial insights!',
       technologies: ['JavaScript(ES6+)', 'Python', 'React', 'Flask', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap',],
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/x-pense-app',
       sourceUrl: 'https://github.com/marlonmunoz/x-pense-app',
       image: '/projects/x-pense-site.png',
-      highlights: ['AI Integration', 'User Authentication System', 'Real-time tracking', 'Data visualization', 'Responsive design']
+      highlights: ['AI Powered Transaction Categorization', 'Interactive Financial Dashbaord', 'Smart Balance Management', 'Goal Tracking & Progress Visualization',  'Live Cryptocurrency Investment Tracking',  'Advanced UI/UX Darl/Light Mode',  'Comprehensive Transaction Managemnet',  'AI Demo and Natural Language Queries',]
     },
     {
       title: 'FOX-RUNNER GAME',
