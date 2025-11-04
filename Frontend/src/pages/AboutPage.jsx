@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Card from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import { Link } from 'react-router-dom'
@@ -16,10 +16,39 @@ import {
 } from 'lucide-react'
 
 const AboutPage = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [counts, setCounts] = useState({ projects: 0, years: 0 })
+
+  useEffect(() => {
+    setIsVisible(true)
+    
+    // Animate the stats count up
+    const animateCount = (target, key, duration = 1000) => {
+      const start = 0
+      const increment = target / (duration / 50)
+      let current = 0
+      
+      const timer = setInterval(() => {
+        current += increment
+        if (current >= target) {
+          current = target
+          clearInterval(timer)
+        }
+        setCounts(prev => ({ ...prev, [key]: Math.floor(current) }))
+      }, 50)
+    }
+
+    // Start animations after component mounts
+    setTimeout(() => {
+      animateCount(6, 'projects')
+      animateCount(5, 'years') // 2025 - 2020 = 5 years
+    }, 500)
+  }, [])
+
   const stats = [
-    { number: '6+', label: 'Projects Built' },
+    { number: `${counts.projects}+`, label: 'Projects Built' },
     { number: 'Pending', label: 'Content Views' },
-    { number: '2020', label: 'Started Coding' }
+    { number: `${2020 + counts.years}`, label: 'Started Coding' }
   ]
 
   const journeyItems = [
@@ -87,14 +116,20 @@ const AboutPage = () => {
       <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <div className="space-y-6 lg:order-1">
           <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
-              Hi, I'm <span className="text-accent">Marlon Munoz</span>
+            <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight transform transition-all duration-1000 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+            }`}>
+              Hi, I'm <span className="text-accent bg-gradient-to-r from-accent to-primary-600 bg-clip-text">Marlon Munoz</span>
             </h1>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-light">
+            <h2 className={`text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-light transform transition-all duration-1000 delay-300 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+            }`}>
               Full-Stack Developer / Software Engineer 
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              I'm a passionate software engineer who transforms ideas into elegant, 
+            <p className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed transform transition-all duration-1000 delay-500 ${
+              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+            }`}>
+              I'm a <span className="text-accent font-medium">passionate</span> software engineer who transforms ideas into elegant, 
               user-focused digital solutions. With a unique background spanning creative 
               media and technology, I bring both artistic vision and technical precision 
               to every project I build.
@@ -104,8 +139,15 @@ const AboutPage = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 sm:gap-6 py-6">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-xl sm:text-2xl font-bold text-accent">{stat.number}</div>
+              <div 
+                key={index} 
+                className={`text-center transform transition-all duration-1000 delay-${index * 200} ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`}
+              >
+                <div className="text-xl sm:text-2xl font-bold text-accent hover:scale-110 transition-transform duration-300">
+                  {stat.number}
+                </div>
                 <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
               </div>
             ))}
