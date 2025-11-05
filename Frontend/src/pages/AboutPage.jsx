@@ -23,7 +23,7 @@ import {
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const [counts, setCounts] = useState({ projects: 0, years: 0 })
+  const [counts, setCounts] = useState({ projects: 0, startYear: 2025 })
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [displayedText, setDisplayedText] = useState('')
   const [isTyping, setIsTyping] = useState(true)
@@ -49,10 +49,25 @@ const AboutPage = () => {
       }, 50)
     }
 
+    // Animate counting down for start year
+    const animateCountDown = (startValue, targetValue, key, duration = 1000) => {
+      const decrement = (startValue - targetValue) / (duration / 50)
+      let current = startValue
+      
+      const timer = setInterval(() => {
+        current -= decrement
+        if (current <= targetValue) {
+          current = targetValue
+          clearInterval(timer)
+        }
+        setCounts(prev => ({ ...prev, [key]: Math.floor(current) }))
+      }, 50)
+    }
+
     // Start animations after component mounts
     setTimeout(() => {
       animateCount(6, 'projects')
-      animateCount(5, 'years') // 2025 - 2020 = 5 years
+      animateCountDown(2025, 2020, 'startYear') // Count down from 2025 to 2020
     }, 500)
 
     // Typing effect for dynamic words
@@ -92,7 +107,7 @@ const AboutPage = () => {
   const stats = [
     { number: `${counts.projects}+`, label: 'Projects Built' },
     { number: 'Pending', label: 'Content Views' },
-    { number: `${2020 + counts.years}`, label: 'Started Coding' }
+    { number: `${counts.startYear}`, label: 'Started Coding' }
   ]
 
   const journeyItems = [
