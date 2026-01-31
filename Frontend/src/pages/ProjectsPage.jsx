@@ -6,9 +6,87 @@ import { ExternalLink, Folder, Github, Rocket } from 'lucide-react'
 const ProjectsPage = () => {
   const projects = [
     {
+      title: 'University of Richmond Assistant (chatbot)',
+      description: 'Production-grade RAG chatbot for University of Richmond policy queries with ChromaDB cloud vector storage and OpenAI embeddings. Features persistent conversation memory using LangGraph with PostgreSQL for stateful multi-turn dialogues.',
+      technologies: ['Python', 'FastAPI', 'LangGraph', 'ChromaDB Cloud', 'OpenAI API', 'PostgreSQL', 'React', 'Tailwind CSS'],
+      status: 'live',
+      sourceUrl: 'https://github.com/marlonmunoz/chatbot_richmond_policies',
+      image: '/projects/RPA.png',
+      highlights: [
+        'RAG-powered policy Q&A system with contextual understanding',
+        'Persistent conversation memory with PostgreSQL',
+        'Modular FastAPI backend with clean architecture',
+        'React/Tailwind frontend with dark/light mode support',
+        'Citation-grounded responses for accuracy'
+      ]
+    },
+    {
+      title: 'Data Ingestion Sub System',
+      description: 'Python-based ETL orchestration system with automated workflows for multi-source data ingestion (CSV, JSON, REST APIs) into PostgreSQL staging tables with comprehensive validation, deduplication, and audit logging.',
+      technologies: ['Python', 'PostgreSQL', 'Pandas', 'Pydantic', 'Docker', 'GitHub Actions', 'Pytest'],
+      status: 'live',
+      sourceUrl: 'https://github.com/marlonmunoz/data-ingestion-subsystem-project',
+      image: '/projects/data-ingestion.png',
+      highlights: [
+        'ETL pipeline extracting living wage data via web scraping and US Census Bureau API',
+        'PostgreSQL schema with staging tables, reject tracking, and Flyway migrations',
+        'Caching, retry logic with exponential backoff, and rate limiting for reliable extraction',
+        'Transformed wide-format HTML tables to normalized records using Pandas and Pydantic',
+        'Containerized PostgreSQL with Docker and CI/CD pipeline with GitHub Actions'
+      ]
+    },
+    {
+      title: 'Sentiment Classification API',
+      description: 'AI-powered NLP system performing multi-class sentiment classification using transformer-based architectures with end-to-end ML workflows including preprocessing, fine-tuning, evaluation, and production API deployment.',
+      technologies: ['Python', 'TensorFlow', 'Hugging Face Transformers', 'FastAPI', 'Docker', 'NLP', 'RoBERTa'],
+      status: 'live',
+      sourceUrl: 'https://github.com/Carlomos7/review-sentiment-analyzer',
+      image: '/projects/Sentio.png',
+      highlights: [
+        'Fine-tuned transformer models (RoBERTa-based) for sentiment classification on e-commerce review data',
+        'Implemented text preprocessing, tokenization, and label mapping pipelines for supervised learning',
+        'Evaluated model performance using accuracy and loss metrics, iterating on training strategies',
+        'Exposed trained models through FastAPI service for real-time sentiment inference',
+        'Containerized application using Docker for consistent deployment workflows'
+      ]
+    },
+    {
+      title: 'Cloud-Based RAG System',
+      description: 'Comprehensive RAG pipeline leveraging AWS Bedrock and vector database technology for semantic search and contextually-grounded LLM responses with cloud-native integration patterns.',
+      technologies: ['Python', 'AWS Bedrock', 'Claude LLM', 'ChromaDB', 'LangChain', 'Vector Embeddings', 'boto3'],
+      status: 'live',
+      sourceUrl: 'https://github.com/marlonmunoz',
+      image: '/projects/cloud-rag.png',
+      highlights: [
+        'Designed multi-phase RAG pipeline covering ingestion, embedding, retrieval, and generation',
+        'Performed semantic chunking on source text to improve embedding quality and retrieval relevance',
+        'Generated embeddings and stored them in ChromaDB vector store configured for cloud usage',
+        'Integrated AWS Bedrock using Claude model for response generation grounded in retrieved context',
+        'Implemented retrieval logic combining vector search with prompt construction for LLM inference',
+        'Managed cloud configuration and authentication using AWS SDK (boto3)'
+      ]
+    },
+    {
+      title: 'Vector-Based RAG API Platform',
+      description: 'Production-grade backend AI infrastructure implementing RAG API for natural language querying over domain-specific knowledge bases through semantic search and generative AI with clean architecture principles.',
+      technologies: ['Python', 'FastAPI', 'ChromaDB', 'AWS Bedrock', 'LangChain', 'Docker', 'RAG Architecture'],
+      status: 'live',
+      sourceUrl: 'https://github.com/marlonmunoz',
+      image: '/projects/rag-api.png',
+      highlights: [
+        'Designed modular RAG backend using FastAPI with separated ingestion, retrieval, and query layers',
+        'Integrated ChromaDB as vector store for embedding persistence and semantic search',
+        'Implemented document ingestion pipelines with configurable chunking and metadata handling',
+        'Built query workflows combining vector similarity search with prompt construction for grounded LLM responses',
+        'Integrated AWS Bedrock as LLM provider with client abstraction for model interaction',
+        'Applied structured configuration management using environment-based settings and validation',
+        'Containerized application with Docker for consistent deployment'
+      ]
+    },
+    {
       title: 'X-PENSE',
       description: 'X-PENSE is a sophisticated full-stack financial management solution that combines modern web technologies with AI capabilities to provide intelligent expense tracking and financial insights!',
-      technologies: ['JavaScript(ES6+)', 'Python', 'React', 'Flask', 'PostgreSQL', 'HTML', 'CSS3', 'Bootstrap',],
+      technologies: ['JavaScript(ES6+)', 'Python', 'React', 'Flask', 'PostgreSQL', 'HTML', 'CSS3', 'Tailwind', 'Bootstrap',],
       status: 'live',
       liveUrl: 'https://marlonmunoz.github.io/x-pense-app',
       sourceUrl: 'https://github.com/marlonmunoz/x-pense-app',
