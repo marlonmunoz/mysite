@@ -7,7 +7,6 @@ const ResumePage = () => {
   const contactInfo = {
     name: 'Marlon Munoz',
     location: 'New York, NY',
-    phone: '646-873-0251',
     email: 'marlon@marlonshade.com',
     links: [
       { label: 'Github', url: 'https://github.com/marlonmunoz' },
@@ -136,7 +135,7 @@ const ResumePage = () => {
         <div className="text-center space-y-3 sm:space-y-4">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">{contactInfo.name}</h1>
           <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">
-            {contactInfo.location} · {contactInfo.phone}
+            {contactInfo.location}  {contactInfo.phone}
           </p>
           <div className="flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm">
             {contactInfo.links.map((link, index) => (
