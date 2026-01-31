@@ -250,7 +250,7 @@ const ResumePage = () => {
             </a>
           </div>
           <h2 className="text-sm sm:text-base lg:text-xl font-semibold text-accent uppercase tracking-wide">
-            AI ENGINEER | FULL-STACK DEVELOPER
+            AI ENGINEER | SOFTWARE ENGINEER
           </h2>
         </div>
       </Card>

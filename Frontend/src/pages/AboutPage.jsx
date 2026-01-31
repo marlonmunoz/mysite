@@ -18,17 +18,19 @@ import {
   Cpu,
   Database,
   GitBranch,
-  Zap
+  Zap,
+  Star,
+  Sparkles
 } from 'lucide-react'
 
 const AboutPage = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [counts, setCounts] = useState({ projects: 0, startYear: 2025 })
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
-  const [displayedText, setDisplayedText] = useState('')
+  // const [displayedText, setDisplayedText] = useState('')
   const [isTyping, setIsTyping] = useState(true)
 
-  const dynamicWords = ['passionate', 'innovative', 'detail-oriented', 'creative', 'problem-solving']
+  // const dynamicWords = ['passionate', 'innovative', 'detail-oriented', 'creative', 'problem-solving']
 
   useEffect(() => {
     setIsVisible(true)
@@ -66,8 +68,8 @@ const AboutPage = () => {
 
     // Start animations after component mounts
     setTimeout(() => {
-      animateCount(6, 'projects')
-      animateCountDown(2025, 2020, 'startYear') // Count down from 2025 to 2020
+      animateCount(8, 'projects')
+      animateCountDown(2026, 2020, 'startYear') // Count down from 2025 to 2020
     }, 500)
 
     // Typing effect for dynamic words
@@ -106,7 +108,7 @@ const AboutPage = () => {
 
   const stats = [
     { number: `${counts.projects}+`, label: 'Projects Built' },
-    { number: 'Pending', label: 'Content Views' },
+    { number: '5+', label: 'AI Projects' },
     { number: `${counts.startYear}`, label: 'Started Coding' }
   ]
 
@@ -123,31 +125,46 @@ const AboutPage = () => {
     },
     {
       Icon: Rocket,
-      title: 'Full Stack Developer',
+      title: 'Software Engineer',
       description: 'Completed intensive training at Flatiron School, mastering Python, JavaScript, React, and Flask. Now building scalable web applications with clean, maintainable code and user-focused design.'
+    },
+    {
+      Icon: Sparkles,
+      title: 'AI Engineer at Revature',
+      description: 'Specialized in AI/ML engineering, building production-grade RAG systems, fine-tuning transformer models for NLP tasks, and developing scalable ETL pipelines. Gained hands-on experience with TensorFlow, LangChain, AWS Bedrock, ChromaDB, and modern MLOps practices.'
     }
   ]
 
   const skills = [
     {
+      Icon: Sparkles,
+      title: 'AI & Machine Learning',
+      description: 'Building end-to-end ML pipelines with TensorFlow and Keras, fine-tuning transformer models (RoBERTa), and implementing NLP solutions for production applications'
+    },
+    {
+      Icon: Zap,
+      title: 'RAG Systems & Vector Search',
+      description: 'Designing retrieval-augmented generation pipelines with LangChain, ChromaDB, and AWS Bedrock for contextually-grounded AI responses and semantic search'
+    },
+    {
+      Icon: Database,
+      title: 'Data Engineering & ETL',
+      description: 'Orchestrating multi-source data ingestion pipelines with PostgreSQL, implementing validation frameworks with Pandas and Pydantic, and building scalable ETL workflows'
+    },
+    {
+      Icon: Code,
+      title: 'AI Infrastructure & APIs',
+      description: 'Deploying production-grade AI services with FastAPI, integrating cloud LLM providers (AWS Bedrock, Claude), and containerizing applications with Docker'
+    },
+    {
       Icon: Palette,
       title: 'Frontend Development',
-      description: 'Creating responsive, interactive user interfaces with React, JavaScript, modern CSS3, Bootstrap and Tailwind'
+      description: 'Creating responsive, interactive user interfaces with React, JavaScript, Tailwind CSS, and modern component libraries'
     },
     {
       Icon: Settings,
-      title: 'Backend Development',
-      description: 'Building robust APIs and server-side applications using Python, Flask, and SQL databases'
-    },
-    {
-      Icon: LinkIcon,
-      title: 'Full Stack Integration',
-      description: 'Connecting frontend and backend seamlessly with RESTful APIs and modern development practices'
-    },
-    {
-      Icon: Smartphone,
-      title: 'Responsive Design',
-      description: 'Ensuring applications work beautifully across all devices and screen sizes'
+      title: 'Backend & Full Stack',
+      description: 'Building robust REST APIs and full-stack applications using Python, Flask, FastAPI, PostgreSQL, and implementing clean architecture principles'
     }
   ]
 
@@ -155,7 +172,7 @@ const AboutPage = () => {
     {
       Icon: Sprout,
       title: 'Learning & Growing',
-      description: 'Expanding my skills in advanced React patterns, Node.js, and cloud deployment'
+      description: 'Deepening expertise in advanced AI architectures, LangGraph workflows, and production MLOps'
     },
     {
       Icon: Users,
@@ -165,7 +182,7 @@ const AboutPage = () => {
     {
       Icon: Briefcase,
       title: 'Career Goals',
-      description: 'Looking for full-time software engineering roles where I can contribute and continue learning'
+      description: 'Looking for full-time AI-Software Engineering roles where I can contribute and continue learning'
     }
   ]
 
@@ -274,18 +291,21 @@ const AboutPage = () => {
             <h2 className={`text-xl sm:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 font-light transform transition-all duration-1000 delay-300 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}>
-              Full-Stack Developer / Software Engineer 
+              AI Engineer / Software Engineer 
             </h2>
             <p className={`text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed transform transition-all duration-1000 delay-500 ${
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
             }`}>
-              I'm a <span className="text-accent font-medium transition-all duration-500">
-                {displayedText}
-                <span className="animate-pulse">|</span>
-              </span> software engineer who transforms ideas into elegant, 
-              user-focused digital solutions. With a unique background spanning creative 
-              media and technology, I bring both artistic vision and technical precision 
-              to every project I build.
+              Results-driven AI Engineer with a robust foundation in full-stack development and a passion for building 
+              intelligent, data-driven solutions. Experienced in designing and deploying end-to-end machine learning pipelines, 
+              retrieval-augmented generation (RAG) systems, and natural language processing applications that transform complex 
+              data into actionable insights. Proficient in integrating cutting-edge AI frameworks—including{' '}
+              <span className="text-accent font-medium">TensorFlow</span>,{' '}
+              <span className="text-accent font-medium">LangChain</span>, and{' '}
+              <span className="text-accent font-medium">transformer models</span>—with modern cloud infrastructure to create 
+              production-ready, scalable applications. Adept at leveraging vector databases, prompt engineering, and semantic 
+              search to deliver contextually grounded AI experiences. Committed to pushing the boundaries of AI technology while 
+              maintaining clean architecture principles and best-in-class software engineering practices.
             </p>
           </div>
           
