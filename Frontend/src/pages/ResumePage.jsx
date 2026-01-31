@@ -17,20 +17,32 @@ const ResumePage = () => {
 
   const skillCategories = [
     {
+      title: 'AI & Machine Learning',
+      skills: ['TensorFlow', 'Keras', 'Deep Learning', 'NLP', 'Transfer Learning', 'Transformer Models', 'Prompt Engineering', 'RAG Architecture', 'Vector Embeddings', 'LangChain', 'LangGraph', 'LangSmith']
+    },
+    {
+      title: 'Data Engineering',
+      skills: ['Python', 'Pandas', 'NumPy', 'PostgreSQL', 'Data Cleaning & Transformation', 'Data Validation', 'ETL Pipelines', 'Data Modeling', 'Dimensional Modeling']
+    },
+    {
       title: 'Languages & Frameworks',
-      skills: ['Python', 'JavaScript (ES6+)', 'Flask', 'React', 'SQL', 'HTML', 'CSS3', 'Bootstrap', 'Tailwind']
+      skills: ['Python', 'JavaScript (ES6+)', 'React', 'Flask', 'FastAPI', 'SQL', 'HTML', 'CSS3', 'Tailwind', 'Bootstrap']
     },
     {
-      title: 'Databases & ORMs',
-      skills: ['PostgreSQL', 'SQLite', 'SQLAlchemy']
+      title: 'AI Infrastructure & Tools',
+      skills: ['AWS Bedrock', 'Claude LLM', 'ChromaDB', 'Vector Databases', 'Hugging Face Transformers', 'boto3']
     },
     {
-      title: 'Developer Tools',
-      skills: ['Git', 'GitHub', 'VSCode', 'Chrome DevTools', 'Postman']
+      title: 'Databases & Storage',
+      skills: ['PostgreSQL', 'SQLite', 'SQLAlchemy', 'ChromaDB', 'AWS S3']
+    },
+    {
+      title: 'Developer Tools & DevOps',
+      skills: ['Git', 'GitHub', 'Docker', 'CI/CD', 'GitHub Actions', 'Postman', 'VSCode', 'Chrome DevTools', 'Pytest']
     },
     {
       title: 'Concepts',
-      skills: ['Full Stack Development', 'RESTful APIs', 'OOP', 'Responsive Design', 'Agile Development', 'MVC Architecture']
+      skills: ['RESTful APIs', 'OOP', 'Agile/Scrum', 'MVC Architecture', 'Microservices', 'Clean Architecture', 'Model Training & Evaluation']
     },
     {
       title: 'Other Tools',
@@ -40,16 +52,28 @@ const ResumePage = () => {
 
   const projects = [
     {
-      title: 'X-PENSE',
-      subtitle: 'AI Powered Budget Tracking App with Real-Time Cryptocurrency Updates',
+      title: 'University of Richmond Chatbot',
+      subtitle: 'RAG-Powered Policy Q&A System',
       links: [
-        { label: 'Github', url: 'https://github.com/marlonmunoz/x-pense-app' },
-        { label: 'Live', url: 'https://marlonmunoz.github.io/x-pense-app/' }
+        { label: 'Github', url: 'https://github.com/marlonmunoz/chatbot_richmond_policies' }
       ],
       details: [
-        'Designed and implemented a full-stack financial tracking tool using React and Flask',
-        'Integrated CoinGecko API to fetch live Bitcoin prices updates',
-        'Enhanced cross-device usability with Bootstrap; improved mobile performance by 50%',
+        'Production-grade RAG chatbot for University of Richmond policy queries with ChromaDB cloud vector storage and OpenAI embeddings',
+        'Implemented persistent conversation memory using LangGraph with PostgreSQL for stateful multi-turn dialogues',
+        'Built modular FastAPI backend with React/Tailwind frontend featuring dark/light mode and citation-grounded responses',
+        'Tech Stack: FastAPI, LangGraph, ChromaDB Cloud, OpenAI API, PostgreSQL, React, Tailwind CSS'
+      ]
+    },
+    {
+      title: 'X-PENSE',
+      subtitle: 'AI Powered Budget Tracking App with Interactive AI Assistant',
+      links: [
+        { label: 'Github', url: 'https://github.com/marlonmunoz/x-pense-app' },
+        { label: 'Demo', url: 'https://marlonmunoz.github.io/x-pense-app/' }
+      ],
+      details: [
+        'Full-stack financial tracking tool with interactive AI Assistant using NLP for natural language financial data queries',
+        'Built with React and Flask; enhanced cross-device usability with Bootstrap (50% mobile performance improvement)',
         'Employed RESTful architecture and clean component design for maintainability'
       ]
     },
@@ -57,13 +81,12 @@ const ResumePage = () => {
       title: 'IRYNK-App',
       subtitle: 'Educational Toy Recommendation Platform',
       links: [
-        { label: 'Github', url: 'https://github.com/marlonmunoz/IRYNK-App' }
+        { label: 'Github', url: 'https://github.com/marlonmunoz/IRYNK-App' },
+        { label: 'Demo', url: '#' }
       ],
       details: [
-        'Developed a personalized toy suggestion tool based on age and interest inputs',
-        'Engineer a custom Flask API with persistent storage via SQLite',
-        'Utilized React hooks and conditional rendering for an intuitive user experience',
-        'Resolved client-server CORS issue and ensured robust API communication'
+        'Personalized toy suggestion tool with custom Flask API and SQLite persistent storage',
+        'Utilized React hooks and conditional rendering for intuitive UX; resolved CORS issues for robust API communication'
       ]
     },
     {
@@ -74,14 +97,84 @@ const ResumePage = () => {
         { label: 'Play', url: 'https://marlonmunoz.github.io/Retro_Fox_Runner-_p5/' }
       ],
       details: [
-        'Built an interactive 2D game using JavaScript, Object-Oriented Programming, and game physics',
-        'Implemented collision detection, scrolling, and level design using Mapper Mate Software',
-        'Demonstrated ability to create dynamic, browser-based games and manage complex game logic'
+        'Interactive 2D game using JavaScript OOP and game physics with collision detection, scrolling, and level design'
       ]
     }
   ]
 
   const experience = [
+    {
+      title: 'AI Engineering / Data Engineering',
+      company: 'Revature',
+      location: 'On-Site',
+      date: 'Nov 2025 – Jan 2026',
+      website: 'revature.com',
+      projects: [
+        {
+          name: 'Data Ingestion Sub System',
+          description: 'Python-based ETL orchestration system with automated workflows for multi-source data ingestion (CSV, JSON, REST APIs) into PostgreSQL staging tables with comprehensive validation, deduplication, and audit logging.',
+          links: [
+            {label: 'Github', url: 'https://github.com/marlonmunoz/data-ingestion-subsystem-project'}
+          ],
+          bullets: [
+            'Built ETL pipeline extracting living wage data via web scraping and US Census Bureau API',
+            'Designed PostgreSQL schema with staging tables, reject tracking, and Flyway migrations',
+            'Implemented caching, retry logic with exponential backoff, and rate limiting for reliable extraction',
+            'Transformed wide-format HTML tables to normalized records using Pandas and Pydantic validation',
+            'Containerized PostgreSQL with Docker and set up CI/CD pipeline with GitHub Actions'
+          ],
+          environment: 'Python, PostgreSQL, Pandas, Docker, Git, Agile-Scrum, Pytest, Data Modeling'
+        },
+        {
+          name: 'Sentiment Classification API for Customer Reviews',
+          description: 'AI-powered NLP system performing multi-class sentiment classification using transformer-based architectures with end-to-end ML workflows including preprocessing, fine-tuning, evaluation, and production API deployment.',
+          links: [
+            {label: 'Github', url: 'https://github.com/Carlomos7/review-sentiment-analyzer'}
+          ],
+          bullets: [
+            'Fine-tuned transformer models (RoBERTa-based) for sentiment classification on e-commerce review data',
+            'Implemented text preprocessing, tokenization, and label mapping pipelines for supervised learning',
+            'Evaluated model performance using accuracy and loss metrics, iterating on training strategies',
+            'Exposed trained models through FastAPI service for real-time sentiment inference',
+            'Containerized application using Docker for consistent deployment workflows'
+          ],
+          environment: 'Python, TensorFlow, Hugging Face Transformers, FastAPI, Docker, Git, NLP'
+        },
+        {
+          name: 'Cloud-Based Retrieval-Augmented Generation (RAG) System',
+          description: 'Comprehensive RAG pipeline leveraging AWS Bedrock and vector database technology for semantic search and contextually-grounded LLM responses with cloud-native integration patterns.',
+          links: [
+            {label: 'Github', url: ''}
+          ],
+          bullets: [
+            'Designed multi-phase RAG pipeline covering ingestion, embedding, retrieval, and generation',
+            'Performed semantic chunking on source text to improve embedding quality and retrieval relevance',
+            'Generated embeddings and stored them in ChromaDB vector store configured for cloud usage',
+            'Integrated AWS Bedrock using Claude model for response generation grounded in retrieved context',
+            'Implemented retrieval logic combining vector search with prompt construction for LLM inference',
+            'Managed cloud configuration and authentication using AWS SDK (boto3)'
+          ],
+          environment: 'Python, AWS Bedrock, Claude LLM, ChromaDB, LangChain, Vector Embeddings, boto3, Git'
+        },
+        {
+          name: 'Vector-Based RAG API Platform',
+          description: 'Production-grade backend AI infrastructure implementing RAG API for natural language querying over domain-specific knowledge bases through semantic search and generative AI with clean architecture principles.',
+          links: [
+            {label: 'Github', url: ''}
+          ],
+          bullets: [
+            'Designed modular RAG backend using FastAPI with separated ingestion, retrieval, and query layers',
+            'Integrated ChromaDB as vector store for embedding persistence and semantic search',
+            'Implemented document ingestion pipelines with configurable chunking and metadata handling',
+            'Built query workflows combining vector similarity search with prompt construction for grounded LLM responses',
+            'Integrated AWS Bedrock as LLM provider with client abstraction for model interaction',
+            'Applied structured configuration management using environment-based settings and validation',
+            'Containerized application with Docker for consistent deployment'
+          ],
+          environment: 'Python, FastAPI, ChromaDB, AWS Bedrock, LangChain, Docker, Git, RAG Architecture'
+        }
+      ]
+    },
     {
       title: 'Motion Graphic Designer / Video Editor',
       company: 'Tommy Boy Entertainment',
@@ -109,7 +202,7 @@ const ResumePage = () => {
 
   const education = [
     {
-      degree: 'Certificate in Full Stack Web Development (Python & JavaScript)',
+      degree: 'Certificate in Full Stack Software Engineer (Python & JavaScript)',
       school: 'Flatiron School',
       location: 'New York, NY',
       date: 'Jul 2024 – Oct 2024'
@@ -157,7 +250,7 @@ const ResumePage = () => {
             </a>
           </div>
           <h2 className="text-sm sm:text-base lg:text-xl font-semibold text-accent uppercase tracking-wide">
-            Full-Stack Developer / SOFTWARE ENGINEER
+            AI ENGINEER | FULL-STACK DEVELOPER
           </h2>
         </div>
       </Card>
@@ -169,11 +262,14 @@ const ResumePage = () => {
         </Card.Header>
         <Card.Content>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Motivated and detail-oriented Software Engineer with hands-on experience in full-stack web development, 
-            building RESTful APIs, and deploying responsive web applications. Skilled in Python, Javascript, Flask, 
-            and React. Strong foundation in object-oriented programming, Agile methodologies and modern version control 
-            workflows (Git/GitHub). Passionate about delivering user-focused, scalable, and maintainable code, 
-            Seeking to contribute innovative teams with focus on growth, collaboration, and product excellence.
+            Results-driven AI Engineer with a robust foundation in full-stack development and a passion for building 
+            intelligent, data-driven solutions. Experienced in designing and deploying end-to-end machine learning pipelines, 
+            retrieval-augmented generation (RAG) systems, and natural language processing applications that transform complex 
+            data into actionable insights. Proficient in integrating cutting-edge AI frameworks—including TensorFlow, LangChain, 
+            and transformer models—with modern cloud infrastructure to create production-ready, scalable applications. Adept at 
+            leveraging vector databases, prompt engineering, and semantic search to deliver contextually grounded AI experiences. 
+            Committed to pushing the boundaries of AI technology while maintaining clean architecture principles and 
+            best-in-class software engineering practices.
           </p>
         </Card.Content>
       </Card>
@@ -204,6 +300,78 @@ const ResumePage = () => {
         </Card.Content>
       </Card>
 
+      {/* Professional Experience */}
+      <Card>
+        <Card.Header>
+          <Card.Title>Professional Experience</Card.Title>
+        </Card.Header>
+        <Card.Content>
+          <div className="space-y-8">
+            {experience.map((exp, index) => (
+              <div key={index} className="border-l-2 border-accent/30 pl-6 space-y-3">
+                <div className="space-y-1">
+                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.title}</h4>
+                  <div className="flex flex-wrap justify-between items-center gap-2">
+                    <span className="text-accent font-medium">{exp.company}, {exp.location}</span>
+                    <span className="text-gray-600 dark:text-gray-400 text-sm">{exp.date}</span>
+                  </div>
+                  <p className="text-accent/70 text-sm">{exp.website}</p>
+                </div>
+                
+                {/* Handle projects structure (for Revature) */}
+                {exp.projects ? (
+                  <div className="space-y-6">
+                    {exp.projects.map((project, projectIndex) => (
+                      <div key={projectIndex} className="space-y-2">
+                        <div className="flex flex-wrap justify-between items-start gap-2">
+                          <h5 className="font-semibold text-gray-900 dark:text-white text-base">{project.name}</h5>
+                          {project.links && (
+                            <div className="flex gap-3">
+                              {project.links.map((link, linkIndex) => (
+                                <a
+                                  key={linkIndex}
+                                  href={link.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-accent hover:text-accent/80 text-sm transition-colors"
+                                >
+                                  {link.label}
+                                </a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm italic">{project.description}</p>
+                        <ul className="space-y-2">
+                          {project.bullets.map((bullet, bulletIndex) => (
+                            <li key={bulletIndex} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-3">
+                              <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                              {bullet}
+                            </li>
+                          ))}
+                        </ul>
+                        <p className="text-accent/70 text-xs italic mt-2">
+                          <span className="font-medium">Environment:</span> {project.environment}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  /* Handle simple details structure (for other experiences) */
+                  <ul className="space-y-2">
+                    {exp.details.map((detail, detailIndex) => (
+                      <li key={detailIndex} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-3">
+                        <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </Card.Content>
+      </Card>
       {/* Technical Projects */}
       <Card>
         <Card.Header>
@@ -244,41 +412,11 @@ const ResumePage = () => {
         </Card.Content>
       </Card>
 
-      {/* Professional Experience */}
-      <Card>
-        <Card.Header>
-          <Card.Title>Professional Experience</Card.Title>
-        </Card.Header>
-        <Card.Content>
-          <div className="space-y-8">
-            {experience.map((exp, index) => (
-              <div key={index} className="border-l-2 border-accent/30 pl-6 space-y-3">
-                <div className="space-y-1">
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.title}</h4>
-                  <div className="flex flex-wrap justify-between items-center gap-2">
-                    <span className="text-accent font-medium">{exp.company}, {exp.location}</span>
-                    <span className="text-gray-600 dark:text-gray-400 text-sm">{exp.date}</span>
-                  </div>
-                  <p className="text-accent/70 text-sm">{exp.website}</p>
-                </div>
-                <ul className="space-y-2">
-                  {exp.details.map((detail, detailIndex) => (
-                    <li key={detailIndex} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-3">
-                      <span className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></span>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Card.Content>
-      </Card>
 
       {/* Education & Certifications */}
       <Card>
         <Card.Header>
-          <Card.Title>Education & Certifications</Card.Title>
+          <Card.Title>Education & Credentials</Card.Title>
         </Card.Header>
         <Card.Content>
           <div className="space-y-6">
